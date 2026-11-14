@@ -6,6 +6,11 @@ import ProblemDetail from './pages/ProblemDetail'
 import Solve from './pages/Solve'
 import Submitted from './pages/Submitted'
 import ShowcaseStub from './pages/ShowcaseStub'
+import CompanyHome from './pages/CompanyHome'
+import CompanyNew from './pages/CompanyNew'
+import CompanyProblem from './pages/CompanyProblem'
+import CompanyMatches from './pages/CompanyMatches'
+import TalentInbox from './pages/TalentInbox'
 import type { Role } from './types'
 
 const roles: { id: Role; label: string }[] = [
@@ -47,8 +52,13 @@ export default function App() {
           <Route path="/talent/problem/:id/solve" element={<Solve />} />
           <Route path="/talent/submitted/:sid" element={<Submitted />} />
           <Route path="/talent/showcase" element={<ShowcaseStub />} />
+          <Route path="/talent/inbox" element={<TalentInbox />} />
           <Route path="/talent/*" element={<Navigate to="/talent" replace />} />
-          <Route path="/company/*" element={<Placeholder title="Company" />} />
+          <Route path="/company" element={<CompanyHome />} />
+          <Route path="/company/new" element={<CompanyNew />} />
+          <Route path="/company/problem/:id" element={<CompanyProblem />} />
+          <Route path="/company/matches" element={<CompanyMatches />} />
+          <Route path="/company/*" element={<Navigate to="/company" replace />} />
           <Route path="/organiser" element={<Placeholder title="Organiser" />} />
         </Routes>
       </main>

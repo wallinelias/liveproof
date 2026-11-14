@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { useApp } from '../state/AppContext'
-import { problems } from '../data/problems'
 import { copy } from '../data/copy'
 
 export default function Solve() {
   const { id } = useParams()
   const nav = useNavigate()
-  const { eventJoined, meId, submissions, setSubmissions } = useApp()
+  const { eventJoined, meId, submissions, setSubmissions, problems } = useApp()
   const p = problems.find((x) => x.id === id)
   const [left, setLeft] = useState((p?.timeBoxMin ?? 0) * 60)
   const [work, setWork] = useState('Step 1: What I notice\n\nStep 2: What I would do\n\nStep 3: How I would check it\n')

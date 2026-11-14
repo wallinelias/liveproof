@@ -1,10 +1,9 @@
 import { Link, Navigate } from 'react-router-dom'
 import { useApp } from '../state/AppContext'
-import { problems } from '../data/problems'
 import { copy } from '../data/copy'
 
 export default function ShowcaseStub() {
-  const { eventJoined, meId, submissions } = useApp()
+  const { eventJoined, meId, submissions, problems } = useApp()
   if (!eventJoined) return <Navigate to="/talent" replace />
   const mine = submissions.filter((s) => s.talentId === meId)
   return (

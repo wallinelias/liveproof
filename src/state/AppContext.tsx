@@ -1,10 +1,11 @@
 import { createContext, useContext, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react'
-import type { Role, Interest, Submission, AskMessage, Endorsement, Talent } from '../types'
+import type { Role, Problem, Interest, Submission, AskMessage, Endorsement, Talent } from '../types'
 import { interests as seedInterests } from '../data/interests'
 import { submissions as seedSubmissions } from '../data/submissions'
 import { askMessages as seedAsk } from '../data/askMessages'
 import { endorsements as seedEnd } from '../data/endorsements'
 import { talent as seedTalent } from '../data/talent'
+import { problems as seedProblems } from '../data/problems'
 
 type Set<T> = Dispatch<SetStateAction<T>>
 
@@ -18,6 +19,8 @@ interface AppState {
   endorsements: Endorsement[]; setEndorsements: Set<Endorsement[]>
   interests: Interest[]; setInterests: Set<Interest[]>
   talent: Talent[]; setTalent: Set<Talent[]>
+  problems: Problem[]; setProblems: Set<Problem[]>
+  companyId: string; setCompanyId: (id: string) => void   // current demo company
 }
 
 const Ctx = createContext<AppState | null>(null)
@@ -31,8 +34,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [endorsements, setEndorsements] = useState(seedEnd)
   const [interests, setInterests] = useState(seedInterests)
   const [talent, setTalent] = useState(seedTalent)
+  const [problems, setProblems] = useState<Problem[]>(seedProblems)
+  const [companyId, setCompanyId] = useState('c-blorvik')
   return (
-    <Ctx.Provider value={{ role, setRole, eventJoined, setEventJoined, meId, setMeId, submissions, setSubmissions, asks, setAsks, endorsements, setEndorsements, interests, setInterests, talent, setTalent }}>
+    <Ctx.Provider value={{ role, setRole, eventJoined, setEventJoined, meId, setMeId, submissions, setSubmissions, asks, setAsks, endorsements, setEndorsements, interests, setInterests, talent, setTalent, problems, setProblems, companyId, setCompanyId }}>
       {children}
     </Ctx.Provider>
   )

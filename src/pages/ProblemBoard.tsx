@@ -1,13 +1,12 @@
 import { Link, Navigate } from 'react-router-dom'
 import { useApp } from '../state/AppContext'
-import { problems } from '../data/problems'
 import { companies } from '../data/companies'
 import { copy } from '../data/copy'
 
 const badge = 'inline-block px-2 py-1 rounded-full text-sm font-medium border border-stone-700'
 
 export default function ProblemBoard() {
-  const { eventJoined } = useApp()
+  const { eventJoined, problems } = useApp()
   if (!eventJoined) return <Navigate to="/talent" replace />
   return (
     <div className="p-4 space-y-4">

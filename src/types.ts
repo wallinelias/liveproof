@@ -23,4 +23,4 @@ export interface Talent {
 }
 export interface Endorsement { id: string; fromTalentId: string; toTalentId: string; submissionId: string; skill: string; note?: string }
 export interface AskMessage { id: string; problemId: string; from: 'talent' | 'company'; talentId?: string; text: string; at: string }
-export interface Interest { id: string; submissionId: string; companyId: string; status: 'sent' | 'revealed' | 'declined'; followUpNote?: string }
+export interface Interest { id: string; submissionId: string; companyId: string; status: 'sent' | 'revealed' | 'declined'; followUpNote?: string; contactViewed?: boolean }

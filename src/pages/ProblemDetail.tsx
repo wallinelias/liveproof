@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { useApp } from '../state/AppContext'
-import { problems } from '../data/problems'
 import { companies } from '../data/companies'
 import { copy } from '../data/copy'
 
@@ -14,7 +13,7 @@ const replies = [
 
 export default function ProblemDetail() {
   const { id } = useParams()
-  const { eventJoined, meId, asks, setAsks } = useApp()
+  const { eventJoined, meId, asks, setAsks, problems } = useApp()
   const [text, setText] = useState('')
   const p = problems.find((x) => x.id === id)
   if (!eventJoined) return <Navigate to="/talent" replace />
