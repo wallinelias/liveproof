@@ -1,6 +1,24 @@
 // UI microcopy and pre-written AI draft examples. All text is plain and synthetic.
 
 export const copy = {
+  guide: {
+    label: 'Demo guide',
+    dismiss: 'Dismiss demo guide',
+    show: 'Show guide',
+    join: { text: 'Enter the event code ESPOO-TALENT-NIGHT.', button: 'Fill the code' },
+    board: { text: 'Pick a problem. Note the AI-allowed badge.', button: 'Open a problem' },
+    detail: { text: 'Ask the company a question, then start solving.', button: 'Start solving' },
+    solve: { text: 'Same time and tools for everyone. Submit when ready.' },
+    submitted: { text: 'Edit the AI draft, then add it to your showcase.', button: 'Go to my showcase' },
+    showcase: { text: 'Now switch to Company to see how your work is reviewed.', button: 'Switch to Company' },
+    company: { text: "Blind submissions appear in random order. Tap 'I'm interested'.", button: 'Open a problem' },
+    companyNew: { text: 'Post a problem, then see the blind submissions arrive in random order.', button: 'Back to company home' },
+    companyProblem: { text: "Blind submissions appear in random order. Tap 'I'm interested'.", button: 'See interest sent' },
+    matches: { text: 'Switch to Talent inbox to reveal.', button: 'Open Talent inbox' },
+    inbox: { text: 'Reveal yourself to share contact. Reversible until contact.', button: 'See organiser view' },
+    organiser: { text: 'Aggregate stats only. No individual rankings.', button: 'Back to start' },
+  },
+
   landing: {
     promise: 'Show what you can do, not what your CV says.',
     support: 'Solve a real problem from a real job, live on your phone. Companies review your work, not your background.',

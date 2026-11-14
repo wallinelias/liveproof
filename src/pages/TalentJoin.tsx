@@ -1,12 +1,13 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useApp } from '../state/AppContext'
 import { events } from '../data/events'
 
 export default function TalentJoin() {
-  const { setEventJoined } = useApp()
+  const { setEventJoined, prefillCode } = useApp()
   const nav = useNavigate()
-  const [code, setCode] = useState('')
+  const [code, setCode] = useState(prefillCode)
+  useEffect(() => { if (prefillCode) setCode(prefillCode) }, [prefillCode])
   const [error, setError] = useState('')
 
   function submit(e: FormEvent) {

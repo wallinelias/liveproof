@@ -15,6 +15,8 @@ import CompanyNew from './pages/CompanyNew'
 import CompanyProblem from './pages/CompanyProblem'
 import CompanyMatches from './pages/CompanyMatches'
 import TalentInbox from './pages/TalentInbox'
+import DemoGuide from './components/DemoGuide'
+import { copy } from './data/copy'
 import type { Role } from './types'
 
 const roles: { id: Role; label: string }[] = [
@@ -24,7 +26,7 @@ const roles: { id: Role; label: string }[] = [
 ]
 
 export default function App() {
-  const { role, setRole, eventJoined, interests, submissions, meId, resetDemo } = useApp()
+  const { role, setRole, eventJoined, interests, submissions, meId, resetDemo, guideHidden, setGuideHidden } = useApp()
   const [showResp, setShowResp] = useState(false)
   const loc = useLocation()
   const myIds = submissions.filter((x) => x.talentId === meId).map((x) => x.id)
@@ -78,6 +80,7 @@ export default function App() {
             </nav>
           )}
           <button onClick={() => setShowResp(true)} className="hidden sm:inline-flex items-center min-h-11 px-2 rounded-lg text-sm font-medium text-brand underline">Responsible by design</button>
+          {guideHidden && loc.pathname !== '/' && <button onClick={() => setGuideHidden(false)} className="hidden sm:inline-flex items-center min-h-11 px-2 rounded-lg text-sm font-medium text-brand underline">{copy.guide.show}</button>}
           <button onClick={doReset} className="hidden sm:inline-flex items-center min-h-11 px-2 rounded-lg text-sm font-medium text-brand underline">Reset demo</button>
 
           <div className="sm:hidden relative" ref={roleRef}>
@@ -105,12 +108,14 @@ export default function App() {
             {menuOpen && (
               <div role="menu" aria-label="Menu" className="absolute right-0 mt-2 w-56 p-1 bg-white rounded-xl border border-line shadow-lg">
                 <button role="menuitem" onClick={() => { setMenuOpen(false); setShowResp(true) }} className="w-full min-h-11 px-3 text-left rounded-lg font-medium text-brand">Responsible by design</button>
+                {guideHidden && loc.pathname !== '/' && <button role="menuitem" onClick={() => { setMenuOpen(false); setGuideHidden(false) }} className="w-full min-h-11 px-3 text-left rounded-lg font-medium text-brand">{copy.guide.show}</button>}
                 <button role="menuitem" onClick={doReset} className="w-full min-h-11 px-3 text-left rounded-lg font-medium text-brand">Reset demo</button>
               </div>
             )}
           </div>
         </div>
       </header>
+      <DemoGuide />
       <main className={`mx-auto max-w-3xl ${showTalentNav ? 'pb-24 sm:pb-0' : ''}`}>
         <Routes>
           <Route path="/" element={<Landing onResponsible={() => setShowResp(true)} />} />

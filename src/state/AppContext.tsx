@@ -21,6 +21,8 @@ interface AppState {
   talent: Talent[]; setTalent: Set<Talent[]>
   problems: Problem[]; setProblems: Set<Problem[]>
   companyId: string; setCompanyId: (id: string) => void   // current demo company
+  guideHidden: boolean; setGuideHidden: (b: boolean) => void
+  prefillCode: string; setPrefillCode: (c: string) => void
   resetDemo: () => void
 }
 
@@ -37,13 +39,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [talent, setTalent] = useState(seedTalent)
   const [problems, setProblems] = useState<Problem[]>(seedProblems)
   const [companyId, setCompanyId] = useState('c-blorvik')
+  const [guideHidden, setGuideHidden] = useState(false)
+  const [prefillCode, setPrefillCode] = useState('')
   const resetDemo = () => {
+    setGuideHidden(false); setPrefillCode('')
     setEventJoined(false); setMeId('t-me'); setSubmissions(seedSubmissions); setAsks(seedAsk)
     setEndorsements(seedEnd); setInterests(seedInterests); setTalent(seedTalent)
     setProblems(seedProblems); setCompanyId('c-blorvik')
   }
   return (
-    <Ctx.Provider value={{ resetDemo,  role, setRole, eventJoined, setEventJoined, meId, setMeId, submissions, setSubmissions, asks, setAsks, endorsements, setEndorsements, interests, setInterests, talent, setTalent, problems, setProblems, companyId, setCompanyId }}>
+    <Ctx.Provider value={{ guideHidden, setGuideHidden, prefillCode, setPrefillCode, resetDemo,  role, setRole, eventJoined, setEventJoined, meId, setMeId, submissions, setSubmissions, asks, setAsks, endorsements, setEndorsements, interests, setInterests, talent, setTalent, problems, setProblems, companyId, setCompanyId }}>
       {children}
     </Ctx.Provider>
   )
