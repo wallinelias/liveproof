@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import ResponsibleDialog from './components/ResponsibleDialog'
 import Organiser from './pages/Organiser'
-import { Navigate, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import Landing from './pages/Landing'
+import { Link, Navigate, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useApp } from './state/AppContext'
 import TalentJoin from './pages/TalentJoin'
 import ProblemBoard from './pages/ProblemBoard'
@@ -58,7 +59,7 @@ export default function App() {
     <div className="min-h-screen bg-mist text-ink antialiased">
       <header className="sticky top-0 z-10 h-14 bg-white border-b border-line shadow-sm">
         <div className="mx-auto max-w-3xl h-full flex items-center gap-2 px-2">
-          <span className="font-extrabold text-xl tracking-tight text-brand mr-auto">LiveProof<span className="text-accent">.</span></span>
+          <Link to="/" aria-label="LiveProof home" className="font-extrabold text-xl tracking-tight text-brand mr-auto min-h-11 inline-flex items-center rounded-lg">LiveProof<span className="text-accent">.</span></Link>
           <div role="group" aria-label="Switch role" className="hidden sm:flex p-1 gap-1 rounded-xl bg-mist border border-line">
             {roles.map((r) => (
               <button key={r.id} onClick={() => pickRole(r.id)} aria-pressed={role === r.id}
@@ -112,7 +113,7 @@ export default function App() {
       </header>
       <main className={`mx-auto max-w-3xl ${showTalentNav ? 'pb-24 sm:pb-0' : ''}`}>
         <Routes>
-          <Route path="/" element={<Navigate to="/talent" replace />} />
+          <Route path="/" element={<Landing onResponsible={() => setShowResp(true)} />} />
           <Route path="/talent" element={<TalentJoin />} />
           <Route path="/talent/board" element={<ProblemBoard />} />
           <Route path="/talent/problem/:id" element={<ProblemDetail />} />

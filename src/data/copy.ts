@@ -1,6 +1,18 @@
 // UI microcopy and pre-written AI draft examples. All text is plain and synthetic.
 
 export const copy = {
+  landing: {
+    promise: 'Show what you can do, not what your CV says.',
+    support: 'Solve a real problem from a real job, live on your phone. Companies review your work, not your background.',
+    steps: [
+      { title: 'Solve a real problem live', text: 'Same time and tools for everyone.' },
+      { title: 'Reviewed blind, in random order', text: 'The company sees the work, not who you are.' },
+      { title: 'You choose when to reveal', text: 'Humans decide every hiring step.' },
+    ],
+    start: { talent: 'Start as Talent', company: 'Start as Company', organiser: 'See the organiser view' },
+    note: 'Demo with synthetic data. No real people.',
+  },
+
   banner: 'Same time and tools for everyone',
 
   boardIntro: 'Pick a real problem, do a short timed task, and show what you can do. Companies see your work, not your CV.',
