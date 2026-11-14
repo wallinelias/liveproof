@@ -25,7 +25,7 @@ const Ctx = createContext<AppState | null>(null)
 export function AppProvider({ children }: { children: ReactNode }) {
   const [role, setRole] = useState<Role>('talent')
   const [eventJoined, setEventJoined] = useState(false)
-  const [meId, setMeId] = useState('')
+  const [meId, setMeId] = useState('t-me')
   const [submissions, setSubmissions] = useState(seedSubmissions)
   const [asks, setAsks] = useState(seedAsk)
   const [endorsements, setEndorsements] = useState(seedEnd)

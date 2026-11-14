@@ -2,7 +2,10 @@ import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { useApp } from './state/AppContext'
 import TalentJoin from './pages/TalentJoin'
 import ProblemBoard from './pages/ProblemBoard'
-import ProblemStub from './pages/ProblemStub'
+import ProblemDetail from './pages/ProblemDetail'
+import Solve from './pages/Solve'
+import Submitted from './pages/Submitted'
+import ShowcaseStub from './pages/ShowcaseStub'
 import type { Role } from './types'
 
 const roles: { id: Role; label: string }[] = [
@@ -40,7 +43,10 @@ export default function App() {
           <Route path="/" element={<Navigate to="/talent" replace />} />
           <Route path="/talent" element={<TalentJoin />} />
           <Route path="/talent/board" element={<ProblemBoard />} />
-          <Route path="/talent/problem/:id" element={<ProblemStub />} />
+          <Route path="/talent/problem/:id" element={<ProblemDetail />} />
+          <Route path="/talent/problem/:id/solve" element={<Solve />} />
+          <Route path="/talent/submitted/:sid" element={<Submitted />} />
+          <Route path="/talent/showcase" element={<ShowcaseStub />} />
           <Route path="/talent/*" element={<Navigate to="/talent" replace />} />
           <Route path="/company/*" element={<Placeholder title="Company" />} />
           <Route path="/organiser" element={<Placeholder title="Organiser" />} />
