@@ -10,9 +10,8 @@ export const submissions: Submission[] = [
     work:
       'Sorted by order ID first. Found 143 duplicate IDs, all from one import on the 3rd. Date formats were DD.MM.YYYY and YYYY-MM-DD mixed, so I normalised both. Plan: dedupe at import, validate postcodes, and log rejected blank rows.',
     skills: ['Data analysis', 'Attention to detail', 'Problem solving'],
-    summary:
-      'Worked through a messy export step by step, traced the duplicates to one import, and wrote a plan a developer could run.',
-    summaryIsAiDraft: true,
+    note:
+      'I worked through a messy export step by step and traced the duplicates to one import. I am good at data checks and clear plans.',
   },
   {
     id: 's2',
@@ -22,9 +21,8 @@ export const submissions: Submission[] = [
     work:
       'Pivoted by status to see failed orders. Blank postcodes clustered in one region, which pointed to a form bug. Wrote three bullets and one question for the shop team.',
     skills: ['Data analysis', 'Teamwork'],
-    summary:
-      'Came from warehouse operations and learned SQL on the side. Moves from patterns in the data to one clear question.',
-    summaryIsAiDraft: false,
+    note:
+      'I like finding patterns in data and turning them into one clear question.',
   },
   {
     id: 's3',
@@ -35,9 +33,8 @@ export const submissions: Submission[] = [
     work:
       'We read the notes twice and listed what was done. The handover names the three open tasks, the test that fails, and where the feature flag lives. We left one question for the team lead.',
     skills: ['Written communication', 'Teamwork'],
-    summary:
-      'A calm writer who asked the right question before writing anything. The pair session stayed focused.',
-    summaryIsAiDraft: true,
+    note:
+      'I write calmly and ask the right question before I start. I like focused pair work.',
   },
   {
     id: 's4',
@@ -47,9 +44,8 @@ export const submissions: Submission[] = [
     work:
       'Matched scans on pallet ID within a 5-second window. Found 11 likely pairs, two of them plausible double scans at dock doors. Explained the rule and flagged what the gate log would need to confirm.',
     skills: ['Data analysis', 'Attention to detail'],
-    summary:
-      'Taught himself Python and spreadsheets and builds small data checks on the side. Careful with edge cases.',
-    summaryIsAiDraft: true,
+    note:
+      'I build small data checks in Python and spreadsheets. I am careful with edge cases.',
   },
   {
     id: 's5',
@@ -59,9 +55,8 @@ export const submissions: Submission[] = [
     work:
       'Started from the timestamps, not the pallet IDs, and checked gaps under one minute. Found 9 pairs. Stated the assumption that scanner clocks drift less than 2 seconds.',
     skills: ['Attention to detail', 'Problem solving'],
-    summary:
-      'Careful with detail and good at spotting small mismatches. Explains assumptions clearly.',
-    summaryIsAiDraft: false,
+    note:
+      'I am careful with detail and good at spotting small mismatches. I explain my assumptions.',
   },
   {
     id: 's6',
@@ -72,9 +67,8 @@ export const submissions: Submission[] = [
     work:
       'Reproduced the bug with a date like 00:30 entered on the previous day. The check compared local time to UTC. Proposed a fix and a test for dates across midnight. My partner checked the other fields.',
     skills: ['Problem solving', 'Teamwork'],
-    summary:
-      'Self-taught in Python and spreadsheets. Likes pairing and explains bugs in plain words.',
-    summaryIsAiDraft: true,
+    note:
+      'I like pairing and explaining bugs in plain words.',
   },
   {
     id: 's7',
@@ -84,9 +78,8 @@ export const submissions: Submission[] = [
     work:
       'Wrote a 240-character alert with what changed, the new stop order, and a dispatch phone number. Tested it on a colleague who had not seen the route before.',
     skills: ['Clear communication', 'Customer orientation'],
-    summary:
-      'A former primary school teacher who moved into support work. Writes short messages for busy readers.',
-    summaryIsAiDraft: false,
+    note:
+      'I write short messages for busy readers.',
   },
   {
     id: 's8',
@@ -96,8 +89,7 @@ export const submissions: Submission[] = [
     work:
       'Grouped 40 reviews into four themes: crashes after updates, unclear pricing, missing sleep tracking, and good coaching tips. Counted each theme and wrote one sentence for each.',
     skills: ['Clear communication', 'Data analysis'],
-    summary:
-      'Warehouse background, now studying data on a free course. Writes plain summaries for non-technical teams.',
-    summaryIsAiDraft: true,
+    note:
+      'I write plain summaries of data for non-technical teams.',
   },
 ]

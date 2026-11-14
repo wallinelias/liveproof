@@ -13,7 +13,7 @@ export interface Submission {
   alias: string            // anonymous label shown to companies, e.g. "Solver A7"
   work: string
   skills: string[]
-  summary: string; summaryIsAiDraft: boolean   // talent-editable
+  note: string   // written by the talent, may be empty
   partnerTalentId?: string
 }
 export interface Talent {

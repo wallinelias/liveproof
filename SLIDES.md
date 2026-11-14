@@ -50,17 +50,17 @@ Tip: use the app's role switcher (Talent / Company / Organiser) at the top to re
 - Join with an event code. No account needed.
 - Board shows time box, AI allowed or not, solo or pair.
 - Solve against a timer. Same time and tools for everyone.
-- AI draft summary is labelled, and talent edits it.
+- Optional short note in their own words, shown as "Written by the talent". No AI.
 
-**Speaker note:** Everything is on the phone. Rules are declared up front, and the talent owns their summary and decides when to reveal.
+**Speaker note:** Everything is on the phone. Rules are declared up front, and the talent writes their own note and decides when to reveal.
 
-**Visual:** Three phone screenshots side by side from the Talent role: (1) Problem board with badges, (2) Solve screen with timer, (3) AI draft summary or Showcase.
+**Visual:** Three phone screenshots side by side from the Talent role: (1) Problem board with badges, (2) Solve screen with timer, (3) The note with sentence starters, or Showcase.
 
 ---
 
 ## Slide 5 - Company experience
 **Serves:** Innovation & UX (35%)
-- Paste a vague need. "Help me write it" drafts a problem.
+- Paste a vague need. "Help me write it" drafts a problem (the only AI).
 - Company edits the draft, sets rules, and publishes.
 - Blind review: anonymous solver, random order, no scores.
 - A human taps "I'm interested". Talent then reveals.
@@ -86,14 +86,14 @@ Tip: use the app's role switcher (Talent / Company / Organiser) at the top to re
 
 ## Slide 7 - Responsible by design
 **Serves:** Responsible & Feasible (20%)
-- AI drafts only. No score, rank, filter or match %.
-- Humans make every hiring step. Blind, random order.
+- AI helps companies describe problems. It never describes, scores or judges people.
+- Humans make every hiring step. Blind, random order. No score, rank or match %.
 - Minimal data: first name and skills, hidden until reveal.
 - Avoids high-risk AI screening under the EU AI Act.
 
-**Speaker note:** Our reading of the Act, not legal advice: only two labelled, editable drafting aids, and we would get a legal review before launch. All data is synthetic.
+**Speaker note:** Our reading of the Act, not legal advice: one labelled, human-edited problem-drafting aid, nothing AI about people, and we would get a legal review before launch. All data is synthetic.
 
-**Visual:** Screenshot of the "Responsible by design" panel in the app (Organiser role). If you cannot find it, use a 3-box diagram: "AI drafts" / "Human decides" / "Talent reveals".
+**Visual:** Screenshot of the "Responsible by design" panel in the app (Organiser role). If you cannot find it, use a 3-box diagram: "AI drafts problems" / "Human decides" / "Talent reveals".
 
 ---
 
@@ -104,9 +104,9 @@ Tip: use the app's role switcher (Talent / Company / Organiser) at the top to re
 - Talent join by event code. Organiser sees counts only.
 - Pilot at one Espoo event, then a city-run platform.
 
-**Speaker note:** Honest scope: in the demo the AI drafts are pre-generated and replies are scripted. Production adds a small backend with deletion and a serverless model call.
+**Speaker note:** Honest scope: in the demo the company problem draft is a pre-generated string and replies are scripted. Production adds a small backend with deletion and a serverless model call.
 
-**Visual:** Left, a 2-column table "Real in demo" (flow, timers, random order, reveal logic, stats) vs "Simulated" (pre-generated AI drafts, scripted replies, one shared in-memory state). Right, screenshot of Organiser stats.
+**Visual:** Left, a 2-column table "Real in demo" (flow, timers, random order, reveal logic, stats) vs "Simulated" (pre-generated problem draft, scripted replies, one shared in-memory state). Right, screenshot of Organiser stats.
 
 ---
 

@@ -38,8 +38,8 @@ At a recruiting event, companies post short, real problems from the actual job. 
 2. Browse the problem board. Every card shows company, time box, an "AI allowed / No AI this round" badge, solo or pair, and skill tags.
 3. Open a problem and ask the company a question.
 4. Solve with a countdown timer. Banner: "Same time and tools for everyone". Pair mode has a shared box and short chat.
-5. After submitting, an AI-drafted skills summary appears, labelled "AI draft". The talent edits it and it goes to their showcase.
-6. The showcase holds solved problems, the talent's own summary, optional skill-tagged peer endorsements and privacy status.
+5. After submitting, the talent can add an optional note in their own words, with sentence starters (no AI). Companies see it labelled "Written by the talent".
+6. The showcase holds solved problems, the talent's own note, optional skill-tagged peer endorsements and privacy status.
 7. When a company is interested, it arrives in the inbox. Talent taps "Reveal" or "Not now".
 
 **Company (laptop or phone)**
@@ -54,9 +54,9 @@ Aggregate counts only: problems, submissions, introductions made. Never anything
 Collaboration is optional. Pair partners can give skill-tagged endorsements ("good at debugging"); companies see endorsements, never raw chat. The solo path is fully equal.
 
 ## Responsible by design (EU AI Act and privacy)
-- **AI assists, never decides.** There is no score, rank, filter or "match %" for people anywhere. The types contain no score field, so it cannot appear by accident.
+- **AI helps companies describe problems. It never describes, scores or judges people.** No score, rank, filter or "match %" for people anywhere. The types contain no score field.
 - **Human in the loop for every hiring step.** Interest, contact and decisions are human actions. This keeps LiveProof away from automated profiling and automated decision-making about individuals.
-- **Risk class.** The design deliberately avoids the AI uses that the EU AI Act lists as high-risk in employment (AI to screen, filter, rank or evaluate candidates). The only AI features are two drafting aids (problem text for companies, skills summary for talent). Both are labelled "AI draft", editable and non-binding. This is our reading of the Act, not legal advice. A real deployment would get a legal review, and transparency duties for AI-generated text would be met by the labelling.
+- **Risk class.** The design deliberately avoids the AI uses that the EU AI Act lists as high-risk in employment (AI to screen, filter, rank or evaluate candidates). The only AI feature is one drafting aid: problem text for companies, labelled "AI draft", edited by a human and non-binding. This is our reading of the Act, not legal advice. A real deployment would get a legal review, and transparency duties for AI-generated text would be met by the labelling.
 - **Privacy by design.** Data minimisation: first name and skills only, and the name stays hidden until the talent reveals. Reveal is one tap and reversible until contact is shared. No accounts, no tracking, no backend in the prototype.
 - **Bias avoidance.** Blind review. Random order of submissions (one shuffle helper, no sort by any field). Equal time and tools, declared on every problem. Skills and work are shown, not nationality, language polish, school or career path.
 
@@ -64,11 +64,11 @@ Collaboration is optional. Pair partners can give skill-tagged endorsements ("go
 Every name, company, problem and submission is fictional. No real personal data is used or stored.
 
 ## Feasibility
-LiveProof is a static web app: nearly free to host, no installs, works on any phone browser. An organiser needs only an event code, a few company problems and an aggregate stats screen. In production, a small backend would store submissions with event-scoped retention and deletion, and a serverless function could call a small language model for the two drafting aids (key kept server-side). Companies post a problem via a link before the event; talent join by event code, no account.
+LiveProof is a static web app: nearly free to host, no installs, works on any phone browser. An organiser needs only an event code, a few company problems and an aggregate stats screen. In production, a small backend would store submissions with event-scoped retention and deletion, and a serverless function could call a small language model for the problem draft (key kept server-side). Companies post a problem via a link before the event; talent join by event code, no account.
 
 ## What is real and what is simulated in this demo
 Real: the full flow, timers, blind random-order review, the reveal and mutual-interest logic, aggregate stats.
-Simulated: the AI drafts (problem text and skills summary) are **pre-generated strings**, not live model calls. Company answers in the ask-thread and the pair partner are scripted. There is no backend, so the roles share one in-memory state in one browser.
+Simulated: the only AI feature, the company problem draft, is a **pre-generated string**, not a live model call. Company answers in the ask-thread and the pair partner are scripted. There is no backend, so the roles share one in-memory state in one browser.
 
 The 4-second opening shot of the demo video is AI-generated (Higgsfield), abstract, with no real people.
 ---
@@ -83,7 +83,7 @@ The full script, shot table, Higgsfield prompt, filming guide, CapCut steps and 
 
 LiveProof changes the signal. Companies post a short, real problem from the actual job. Talent solve it live on their phones, with the same time and tools for everyone, solo or in pairs. Companies review the work, not the CV. It is blind and in random order. There are no scores and no rankings. A human taps interested, and the talent decides if and when to reveal their name.
 
-AI only helps draft: it turns a vague company need into a clear problem, and it drafts a skills summary the talent edits. It never decides about a person. That keeps us clear of automated profiling under the EU AI Act, with minimal data and synthetic data throughout.
+AI helps companies describe problems. It never describes, scores or judges people. It turns a vague company need into a clear problem that a human edits. Talent write their own short note, optional and in their own words. That keeps us clear of automated profiling under the EU AI Act, with minimal data and synthetic data throughout.
 
 Hackathons show who people really are. LiveProof brings that into every recruiting event."
 
@@ -92,29 +92,29 @@ Hackathons show who people really are. LiveProof brings that into every recruiti
 1. **Title** - LiveProof, pitch line, City of Espoo Rethinking Recruitment. (Context)
 2. **Problem** [Impact 45] - AI-written CVs, AI screening, irrelevant approaches, weak follow-up, bias risk for international talent. Companies cannot state their needs.
 3. **Insight and idea** [Impact 45] - Live work beats CV. Hackathon signal in every event. One-line flow: post, solve, review blind, reveal, follow up.
-4. **Talent experience** [Innovation and UX 35] - Phone screenshots: board with badges, solve with timer, AI draft summary, showcase, reveal inbox.
+4. **Talent experience** [Innovation and UX 35] - Phone screenshots: board with badges, solve with timer, own-words note, showcase, reveal inbox.
 5. **Company experience** [Innovation and UX 35] - Help me write it, blind random-order review, "I'm interested", contact card.
 6. **Social layer** [Innovation and UX 35] - Pair mode, skill-tagged endorsements, solo always equal, no raw chat to companies.
-7. **Responsible by design** [Responsible and Feasible 20] - No scores or ranking, human decides, random order, blind, minimal data, synthetic data. EU AI Act: drafting aids only, labelled; avoids high-risk screening use; legal review before production.
+7. **Responsible by design** [Responsible and Feasible 20] - No scores or ranking, human decides, random order, blind, minimal data, synthetic data. "AI helps companies describe problems. It never describes, scores or judges people." EU AI Act: one labelled problem-drafting aid; avoids high-risk screening use; legal review before production.
 8. **Feasibility and Espoo rollout** [Responsible and Feasible 20, Impact 45] - Static web app, near-zero cost, event code, no accounts. Pilot at one Espoo event, then a city-run platform. Real vs simulated table. Organiser stats are counts only.
 9. **Impact and ask** [Impact 45] - Better relevance for companies, fairer chance for international and non-traditional talent, measurable follow-up. Pitch line, demo link, contact.
 
 ## 5. Q&A prep (10 questions)
 
 1. **What risk class is this under the EU AI Act?**
-   We designed it to stay out of the high-risk employment category by never using AI to screen, rank or evaluate candidates. The only AI is two labelled, editable drafting aids, so transparency is the main duty. This is our reading, and we would get a legal review before a real launch.
+   We designed it to stay out of the high-risk employment category by never using AI to screen, rank or evaluate candidates. The only AI is one labelled, human-edited drafting aid for company problem text, and it never describes or judges people, so transparency is the main duty. This is our reading, and we would get a legal review before a real launch.
 
 2. **How do you avoid bias?**
-   Review is blind, in random order, with equal time and tools, so name, school, nationality and language polish never appear. Humans still judge, so human bias remains, but we remove the cues and the automated amplification.
+   Review is blind, in random order, with equal time and tools, so name, school, nationality and language polish never appear. Humans still judge, so human bias remains, but we remove the cues and the automated amplification. AI never describes or judges people, so no model can carry bias into how talent are seen.
 
 3. **What does the AI actually do?**
-   It drafts a clear problem from a company's vague need, and drafts a skills summary the talent edits. It never scores, ranks, filters or recommends people.
+   Only one thing: it drafts a clear problem from a company's vague need, and a human edits it. Talent notes are written by the talent. AI never describes, scores, ranks, filters or recommends people.
 
 4. **What is real and what is simulated in the demo?**
-   The flow, timers, random order, reveal logic and stats are real code. The AI drafts are pre-generated strings, and the company replies and pair partner are scripted, with all data synthetic.
+   The flow, timers, random order, reveal logic and stats are real code. The company problem draft is a pre-generated string, and the company replies and pair partner are scripted, with all data synthetic.
 
 5. **How would it scale?**
-   It is a static front end, so event load is cheap. For production we add a small backend with event-scoped storage and deletion, and a serverless call for the drafts.
+   It is a static front end, so event load is cheap. For production we add a small backend with event-scoped storage and deletion, and a serverless call for the problem draft.
 
 6. **How are companies and talent onboarded?**
    Companies get a link before the event to post a problem, with help from the draft tool. Talent just scan an event code on arrival, with no account.

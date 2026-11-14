@@ -9,7 +9,7 @@ export const copy = {
     board: { text: 'Pick a problem. Note the AI-allowed badge.', button: 'Open a problem' },
     detail: { text: 'Ask the company a question, then start solving.', button: 'Start solving' },
     solve: { text: 'Same time and tools for everyone. Submit when ready.' },
-    submitted: { text: 'Edit the AI draft, then add it to your showcase.', button: 'Go to my showcase' },
+    submitted: { text: 'Write a short note in your own words, then add it to your showcase.', button: 'Go to my showcase' },
     showcase: { text: 'Now switch to Company to see how your work is reviewed.', button: 'Switch to Company' },
     company: { text: "Blind submissions appear in random order. Tap 'I'm interested'.", button: 'Open a problem' },
     companyNew: { text: 'Post a problem, then see the blind submissions arrive in random order.', button: 'Back to company home' },
@@ -25,7 +25,7 @@ export const copy = {
     steps: [
       { title: 'Solve a real problem live', text: 'Same time and tools for everyone.' },
       { title: 'Reviewed blind, in random order', text: 'The company sees the work, not who you are.' },
-      { title: 'You choose when to reveal', text: 'Humans decide every hiring step.' },
+      { title: 'You choose when to reveal', text: 'Humans decide every hiring step. AI drafts company problems only, never describes or judges people.' },
     ],
     start: { talent: 'Start as Talent', company: 'Start as Company', organiser: 'See the organiser view' },
     note: 'Demo with synthetic data. No real people.',
@@ -38,7 +38,7 @@ export const copy = {
   responsible: {
     title: 'Responsible by design',
     bullets: [
-      'AI drafts only. A human always edits and decides.',
+      'AI drafts company problems only. It never describes, scores or judges people.',
       'No scoring and no ranking of people. Ever.',
       'Submissions are shown in random order.',
       'Blind until the talent chooses to reveal their name and contact.',
@@ -54,6 +54,14 @@ export const copy = {
   aiDraft: {
     label: 'AI draft',
     editHint: 'This is a starting point. Edit anything you like.',
+  },
+
+  note: {
+    label: 'In your own words: what did you do and what are you good at?',
+    optional: 'Optional, up to 280 characters.',
+    writtenBy: 'Written by the talent',
+    nudge: 'Need a nudge?',
+    starters: ['I started by...', 'I am good at...', 'Something I would do again is...'],
   },
 
   emptyStates: {

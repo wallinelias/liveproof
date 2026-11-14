@@ -48,9 +48,8 @@ export default function Solve() {
     let alias = ''
     do alias = `Solver ${String.fromCharCode(65 + Math.floor(Math.random() * 26))}${Math.floor(Math.random() * 90 + 10)}`
     while (used.has(alias))
-    const summary = `Worked on "${p.title}" and wrote up their steps in their own words. Shows ${p.skills.join(' and ').toLowerCase()}.`
     const pair = p.mode === 'pair'
-    setSubmissions([...submissions, { id: sid, problemId: p.id, talentId: meId, alias, work, skills: p.skills, summary, summaryIsAiDraft: true, ...(pair ? { partnerTalentId: PARTNER_ID } : {}) }])
+    setSubmissions([...submissions, { id: sid, problemId: p.id, talentId: meId, alias, work, skills: p.skills, note: '', ...(pair ? { partnerTalentId: PARTNER_ID } : {}) }])
     if (pair) setEndorsements([...endorsements, { id: `e-p-${sid}`, fromTalentId: PARTNER_ID, toTalentId: meId, submissionId: sid, skill: p.skills[0], note: 'Easy to think out loud with.' }])
     nav(`/talent/submitted/${sid}`)
   }

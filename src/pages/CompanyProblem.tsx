@@ -41,6 +41,7 @@ export default function CompanyProblem() {
               <div className="flex flex-wrap gap-2">
                 {s.skills.map((k) => <span key={k} className="px-2 py-1 rounded bg-tint text-brand font-medium text-sm">{k}</span>)}
               </div>
+              {s.note && <p className="text-sm p-2 rounded bg-mist"><span className="font-medium">{copy.note.writtenBy}:</span> {s.note}</p>}
               {ends.length > 0 && (
                 <ul className="text-sm space-y-1">
                   {ends.map((e) => <li key={e.id}>Endorsed by a peer for {e.skill}{e.note ? `: ${e.note}` : ''}</li>)}

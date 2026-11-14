@@ -9,8 +9,8 @@ export default function Showcase() {
   const me = talent.find((t) => t.id === meId)
   const revealed = !!me?.revealed
   const received = endorsements.filter((e) => e.toTalentId === meId)
-  const edit = (id: string, summary: string) =>
-    setSubmissions(submissions.map((x) => x.id === id ? { ...x, summary, summaryIsAiDraft: x.summaryIsAiDraft && summary === x.summary } : x))
+  const edit = (id: string, note: string) =>
+    setSubmissions(submissions.map((x) => x.id === id ? { ...x, note } : x))
   return (
     <div className="p-4 space-y-4">
       <h1 className="text-2xl font-extrabold text-brand">My showcase</h1>
@@ -25,12 +25,8 @@ export default function Showcase() {
         {mine.map((s) => (
           <li key={s.id} className="p-4 rounded-xl bg-white border-2 border-line space-y-2">
             <h3 className="font-bold">{problems.find((p) => p.id === s.problemId)?.title}</h3>
-            <div className="flex items-center gap-2">
-              <label htmlFor={`sum-${s.id}`} className="font-medium">Skills summary</label>
-              {s.summaryIsAiDraft && <span className="px-2 py-1 rounded-full text-sm bg-accent-soft text-accent-ink border border-accent">{copy.aiDraft.label}</span>}
-            </div>
-            <textarea id={`sum-${s.id}`} value={s.summary} onChange={(e) => edit(s.id, e.target.value)} rows={4} className="w-full p-3 rounded-lg border-2 border-line-strong" />
-            <p className="text-sm">{copy.aiDraft.editHint}</p>
+            <label htmlFor={`sum-${s.id}`} className="block font-medium">{copy.note.label}</label>
+            <textarea id={`sum-${s.id}`} value={s.note} maxLength={280} onChange={(e) => edit(s.id, e.target.value)} rows={3} className="w-full p-3 rounded-lg border-2 border-line-strong" />
             <div className="flex flex-wrap gap-2">{s.skills.map((k) => <span key={k} className="px-2 py-1 rounded bg-tint text-brand font-medium text-sm">{k}</span>)}</div>
           </li>
         ))}
