@@ -14,6 +14,6 @@
   --color-accent-ink: #6b4200;
 }
 
-html { scroll-padding-top: 7.5rem; }
+html { scroll-padding-top: 4.5rem; }
 body { overflow-x: hidden; background: var(--color-mist); color: var(--color-ink); }
 :focus-visible { outline: 3px solid var(--color-brand); outline-offset: 2px; box-shadow: 0 0 0 5px #fff; }
