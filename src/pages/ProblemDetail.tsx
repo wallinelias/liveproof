@@ -4,7 +4,7 @@ import { useApp } from '../state/AppContext'
 import { companies } from '../data/companies'
 import { copy } from '../data/copy'
 
-const badge = 'inline-block px-2 py-1 rounded-full text-sm font-medium border border-stone-700'
+const badge = 'inline-block px-2 py-1 rounded-full text-sm font-medium border border-line-strong'
 const replies = [
   'Thanks for asking. Use your best judgement and note any assumption you make in your answer.',
   'Good question. The sample on the board is all you need, and a short written plan is fine.',
@@ -37,33 +37,33 @@ export default function ProblemDetail() {
   return (
     <div className="p-4 space-y-4">
       <Link to="/talent/board" className="inline-flex items-center min-h-12 underline font-medium">Back to board</Link>
-      <p className="text-sm text-stone-700">{company}</p>
-      <h1 className="text-2xl font-bold">{p.title}</h1>
+      <p className="text-sm text-muted">{company}</p>
+      <h1 className="text-2xl font-extrabold text-brand">{p.title}</h1>
       <div className="flex flex-wrap gap-2">
         <span className={badge}>{p.timeBoxMin} min</span>
-        <span className={`${badge} ${p.aiAllowed ? 'bg-sky-100' : 'bg-stone-100'}`}>{p.aiAllowed ? copy.aiBadge.allowed : copy.aiBadge.notAllowed}</span>
+        <span className={`${badge} ${p.aiAllowed ? 'bg-tint' : 'bg-mist'}`}>{p.aiAllowed ? copy.aiBadge.allowed : copy.aiBadge.notAllowed}</span>
         <span className={badge}>{p.mode === 'solo' ? 'Solo' : 'Pair'}</span>
       </div>
       <p>{p.description}</p>
       <div className="flex flex-wrap gap-2">
-        {p.skills.map((s) => <span key={s} className="px-2 py-1 rounded bg-amber-100 text-sm">{s}</span>)}
+        {p.skills.map((s) => <span key={s} className="px-2 py-1 rounded bg-tint text-brand font-medium text-sm">{s}</span>)}
       </div>
-      <Link to={`/talent/problem/${p.id}/solve`} className="flex items-center justify-center min-h-12 rounded-lg bg-stone-900 text-white font-bold">Start solving</Link>
+      <Link to={`/talent/problem/${p.id}/solve`} className="flex items-center justify-center min-h-12 rounded-lg bg-brand text-white font-bold">Start solving</Link>
 
       <section aria-labelledby="ask-h" className="space-y-3">
         <h2 id="ask-h" className="text-xl font-bold">Ask the company</h2>
         {thread.length === 0 && <p>{copy.emptyStates.asks}</p>}
         <ul className="space-y-2">
           {thread.map((a) => (
-            <li key={a.id} className={`p-3 rounded-lg border ${a.from === 'company' ? 'bg-white border-stone-400' : 'bg-sky-50 border-sky-300'}`}>
+            <li key={a.id} className={`p-3 rounded-lg border ${a.from === 'company' ? 'bg-white border-line-strong' : 'bg-tint border-line'}`}>
               <p className="text-sm font-semibold">{a.from === 'company' ? `From the company (${company})` : 'A talent asked'}</p>
               <p>{a.text}</p>
             </li>
           ))}
         </ul>
         <label htmlFor="q" className="block font-medium">Your question</label>
-        <textarea id="q" value={text} onChange={(e) => setText(e.target.value)} rows={3} className="w-full p-3 rounded-lg border-2 border-stone-400" />
-        <button onClick={send} className="min-h-12 px-4 rounded-lg bg-stone-900 text-white font-medium">Send question</button>
+        <textarea id="q" value={text} onChange={(e) => setText(e.target.value)} rows={3} className="w-full p-3 rounded-lg border-2 border-line-strong" />
+        <button onClick={send} className="min-h-12 px-4 rounded-lg bg-brand text-white font-medium">Send question</button>
       </section>
     </div>
   )

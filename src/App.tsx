@@ -31,29 +31,29 @@ export default function App() {
   const tabs = [{ to: '/talent/board', label: 'Board' }, { to: '/talent/showcase', label: 'My showcase' }, { to: '/talent/inbox', label: unread ? 'Inbox (new)' : 'Inbox' }]
   const nav = useNavigate()
   return (
-    <div className="min-h-screen bg-amber-50 text-stone-900">
-      <header className="sticky top-0 z-10 bg-white border-b-2 border-stone-900">
+    <div className="min-h-screen bg-mist text-ink antialiased">
+      <header className="sticky top-0 z-10 bg-white border-b border-line shadow-sm">
         <div className="mx-auto max-w-3xl flex flex-wrap items-center gap-x-2 gap-y-1 p-2">
-          <div className="flex gap-2 w-full sm:w-auto sm:order-2">
+          <div role="group" aria-label="Switch role" className="flex w-full sm:w-auto sm:order-2 p-1 gap-1 rounded-xl bg-mist border border-line">
             {roles.map((r) => (
               <button
                 key={r.id}
                 onClick={() => { setRole(r.id); nav('/' + r.id) }}
                 aria-pressed={role === r.id}
-                className={`flex-1 min-h-11 px-3 rounded-lg font-medium ${role === r.id ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}
+                className={`flex-1 min-h-11 px-3 rounded-lg font-semibold ${role === r.id ? 'bg-brand text-white shadow' : 'text-brand'}`}
               >
                 {r.label}
               </button>
             ))}
           </div>
-          <span className="font-bold mr-auto sm:order-1">LiveProof</span>
-          <button onClick={() => setShowResp(true)} className="min-h-11 px-2 rounded-lg text-sm font-medium underline sm:order-3">Responsible by design</button>
-          <button onClick={() => { resetDemo(); nav('/' + role) }} className="min-h-11 px-3 rounded-lg text-sm font-medium border-2 border-stone-900 sm:order-4">Reset demo</button>
+          <span className="font-extrabold text-xl tracking-tight text-brand mr-auto sm:order-1">LiveProof<span className="text-accent">.</span></span>
+          <button onClick={() => setShowResp(true)} className="min-h-11 px-2 rounded-lg text-sm font-medium text-brand underline sm:order-3">Responsible by design</button>
+          <button onClick={() => { resetDemo(); nav('/' + role) }} className="min-h-11 px-3 rounded-lg text-sm font-medium border border-brand text-brand sm:order-4">Reset demo</button>
         </div>
         {role === 'talent' && eventJoined && loc.pathname.startsWith('/talent') && (
           <nav aria-label="Talent" className="mx-auto max-w-3xl flex gap-2 p-2 pt-0">
             {tabs.map((t) => (
-              <NavLink key={t.to} to={t.to} className={({ isActive }) => `flex-1 min-h-12 inline-flex items-center justify-center rounded-lg font-medium text-center ${isActive ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}>
+              <NavLink key={t.to} to={t.to} className={({ isActive }) => `flex-1 min-h-12 inline-flex items-center justify-center rounded-lg font-medium text-center ${isActive ? 'bg-brand text-white' : 'bg-mist text-brand'}`}>
                 {t.label}{t.label.includes('new') && <span className="ml-1 w-2 h-2 rounded-full bg-rose-600" aria-hidden="true" />}
               </NavLink>
             ))}

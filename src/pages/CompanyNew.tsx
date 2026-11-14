@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useApp } from '../state/AppContext'
 import { copy } from '../data/copy'
 
-const field = 'w-full min-h-12 p-2 rounded-lg border-2 border-stone-700 bg-white'
+const field = 'w-full min-h-12 p-2 rounded-lg border-2 border-line-strong bg-white'
 
 export default function CompanyNew() {
   const { companyId, problems, setProblems } = useApp()
@@ -34,14 +34,14 @@ export default function CompanyNew() {
   return (
     <div className="p-4 space-y-4">
       <Link to="/company" className="underline">Back</Link>
-      <h1 className="text-2xl font-bold">Post a problem</h1>
+      <h1 className="text-2xl font-extrabold text-brand">Post a problem</h1>
       <label className="block space-y-1">
         <span className="font-semibold">Describe your need in your own words</span>
         <textarea value={need} onChange={(e) => setNeed(e.target.value)} rows={3} placeholder={copy.helpMeWrite.need} className={field} />
       </label>
-      <button onClick={help} className="min-h-12 px-4 rounded-lg bg-sky-800 text-white font-semibold">Help me write it</button>
+      <button onClick={help} className="min-h-12 px-4 rounded-lg bg-brand text-white font-semibold">Help me write it</button>
       {drafted && (
-        <p className="p-3 rounded-lg bg-sky-100 border border-sky-800">
+        <p className="p-3 rounded-lg bg-tint border border-brand">
           <span className="font-bold">{copy.aiDraft.label}.</span> {copy.aiDraft.editHint}
         </p>
       )}
@@ -60,7 +60,7 @@ export default function CompanyNew() {
         <select value={mode} onChange={(e) => setMode(e.target.value as 'solo' | 'pair')} className={field}>
           <option value="solo">Solo</option><option value="pair">Pair</option>
         </select></label>
-      <button onClick={publish} disabled={!title.trim() || !description.trim()} className="w-full min-h-12 rounded-lg bg-stone-900 text-white font-semibold disabled:opacity-40">Publish</button>
+      <button onClick={publish} disabled={!title.trim() || !description.trim()} className="w-full min-h-12 rounded-lg bg-brand text-white font-semibold disabled:opacity-40">Publish</button>
     </div>
   )
 }

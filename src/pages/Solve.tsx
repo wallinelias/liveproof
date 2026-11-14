@@ -58,27 +58,27 @@ export default function Solve() {
   return (
     <div className="p-4 space-y-4">
       <Link to={`/talent/problem/${p.id}`} className="inline-flex items-center min-h-12 underline font-medium">Back to problem</Link>
-      <h1 className="text-2xl font-bold">{p.title}</h1>
+      <h1 className="text-2xl font-extrabold text-brand">{p.title}</h1>
       <p className="p-3 rounded-lg bg-emerald-100 border border-emerald-800 font-semibold">{copy.banner}</p>
-      <p className="text-3xl font-bold tabular-nums" role="timer" aria-label="Time left">{mm}:{ss}</p>
+      <p className="text-5xl font-extrabold tabular-nums text-brand text-center py-2 rounded-2xl bg-white border border-line" role="timer" aria-label="Time left">{mm}:{ss}</p>
       {over && <p role="alert" className="p-3 rounded-lg bg-rose-100 border border-rose-800 font-semibold">Time is up. Your work is saved below. Please submit it now.</p>}
-      {p.mode === 'pair' && <p className="p-3 rounded-lg bg-sky-100 border border-sky-800">Pair round with {partnerName}, a practice partner. You share one work box.</p>}
+      {p.mode === 'pair' && <p className="p-3 rounded-lg bg-tint border border-brand">Pair round with {partnerName}, a practice partner. You share one work box.</p>}
       <label htmlFor="work" className="block font-medium">{p.mode === 'pair' ? 'Shared work box (text or code)' : 'Your answer (text or code)'}</label>
-      <textarea id="work" value={work} readOnly={over} onChange={(e) => setWork(e.target.value)} rows={14} className="w-full p-3 rounded-lg border-2 border-stone-400 font-mono text-sm" />
+      <textarea id="work" value={work} readOnly={over} onChange={(e) => setWork(e.target.value)} rows={14} className="w-full p-3 rounded-lg border-2 border-line-strong font-mono text-sm" />
       {p.mode === 'pair' && (
         <section aria-label="Chat with partner" className="space-y-2">
           <h2 className="font-bold">Chat with {partnerName}</h2>
           <ul className="space-y-2" aria-live="polite">
-            {chat.map((c, i) => <li key={i} className={`p-2 rounded-lg max-w-[85%] ${c.me ? 'ml-auto bg-stone-200' : 'bg-white border border-stone-300'}`}><span className="block text-xs">{c.me ? 'You' : partnerName}</span>{c.text}</li>)}
+            {chat.map((c, i) => <li key={i} className={`p-2 rounded-lg max-w-[85%] ${c.me ? 'ml-auto bg-tint' : 'bg-white border border-line'}`}><span className="block text-xs">{c.me ? 'You' : partnerName}</span>{c.text}</li>)}
           </ul>
           <label htmlFor="msg" className="block font-medium">Message</label>
           <div className="flex gap-2">
-            <input id="msg" value={msg} onChange={(e) => setMsg(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && send()} className="flex-1 min-h-12 px-3 rounded-lg border-2 border-stone-400" />
-            <button onClick={send} className="min-h-12 px-4 rounded-lg bg-stone-200 font-semibold">Send</button>
+            <input id="msg" value={msg} onChange={(e) => setMsg(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && send()} className="flex-1 min-h-12 px-3 rounded-lg border-2 border-line-strong" />
+            <button onClick={send} className="min-h-12 px-4 rounded-lg bg-tint font-semibold">Send</button>
           </div>
         </section>
       )}
-      <button onClick={submit} className="w-full min-h-12 rounded-lg bg-stone-900 text-white font-bold">Submit my work</button>
+      <button onClick={submit} className="w-full min-h-12 rounded-lg bg-brand text-white font-bold">Submit my work</button>
     </div>
   )
 }

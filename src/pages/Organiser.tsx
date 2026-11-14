@@ -17,13 +17,13 @@ export default function Organiser() {
   ]
   return (
     <div className="p-4 space-y-4">
-      <h1 className="text-2xl font-bold">Event stats</h1>
+      <h1 className="text-3xl font-extrabold text-brand">Event stats</h1>
       <p>Totals for the whole event. No individual people are shown here.</p>
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {stats.map((s) => (
-          <div key={s.label} className="p-4 rounded-xl bg-white border-2 border-stone-300">
-            <dt className="text-stone-700">{s.label}</dt>
-            <dd className="text-2xl font-bold">{s.value}</dd>
+          <div key={s.label} className="p-5 rounded-2xl bg-white border border-line shadow-sm border-t-4 border-t-brand">
+            <dt className="text-muted">{s.label}</dt>
+            <dd className="text-3xl font-extrabold text-brand">{s.value}</dd>
           </div>
         ))}
       </dl>

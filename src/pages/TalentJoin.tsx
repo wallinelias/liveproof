@@ -18,17 +18,19 @@ export default function TalentJoin() {
 
   return (
     <form onSubmit={submit} className="p-4 space-y-4">
-      <h1 className="text-2xl font-bold">Join the event</h1>
-      <p className="text-lg">Enter the event code to see today's problems. Your name stays hidden.</p>
+      <div className="rounded-2xl bg-brand text-white p-6 space-y-2">
+        <h1 className="text-3xl font-extrabold">Join the event</h1>
+        <p className="text-lg text-white/90">Show what you can do. Companies see your work first, never your name. Enter the event code to see today's problems. Your name stays hidden.</p>
+      </div>
       <label htmlFor="code" className="block font-semibold">Event code</label>
       <input
         id="code" value={code} onChange={(e) => setCode(e.target.value)}
         autoComplete="off" autoCapitalize="characters" placeholder="ESPOO-TALENT-NIGHT"
         aria-invalid={!!error} aria-describedby={error ? 'code-err' : undefined}
-        className="w-full min-h-12 px-3 text-lg rounded-lg border-2 border-stone-700 bg-white"
+        className="w-full min-h-12 px-3 text-xl text-center tracking-wide rounded-xl border-2 border-line-strong bg-white"
       />
       {error && <p id="code-err" role="alert" className="text-red-800 font-medium">{error}</p>}
-      <button type="submit" className="w-full min-h-12 rounded-lg bg-stone-900 text-white text-lg font-semibold">Join</button>
+      <button type="submit" className="w-full min-h-14 rounded-xl bg-brand hover:bg-brand-dark text-white text-lg font-semibold">Join</button>
     </form>
   )
 }

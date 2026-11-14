@@ -13,14 +13,14 @@ export default function CompanyMatches() {
   return (
     <div className="p-4 space-y-4">
       <Link to="/company" className="underline">Back</Link>
-      <h1 className="text-2xl font-bold">Interest and contacts</h1>
+      <h1 className="text-2xl font-extrabold text-brand">Interest and contacts</h1>
       {mine.length === 0 && <p>No interest sent yet. Open a problem and tap "I'm interested".</p>}
       <ul className="space-y-3">
         {mine.map((i) => {
           const s = submissions.find((x) => x.id === i.submissionId)
           const t = talent.find((x) => x.id === s?.talentId)
           return (
-            <li key={i.id} className="p-4 rounded-xl bg-white border-2 border-stone-300 space-y-2">
+            <li key={i.id} className="p-4 rounded-xl bg-white border-2 border-line space-y-2">
               <h2 className="font-bold">{s?.alias}</h2>
               {i.status === 'sent' && <p>Waiting for the solver to decide. Their name stays hidden until they choose.</p>}
               {i.status === 'declined' && <p>The solver chose not now.</p>}
@@ -28,9 +28,9 @@ export default function CompanyMatches() {
                 <>
                   <RevealedContact talent={t} interest={i} onShow={() => setInterests(interests.map((x) => x.id === i.id ? { ...x, contactViewed: true } : x))} />
                   {i.contactViewed && (
-                    <div className="p-3 rounded-lg bg-stone-100 space-y-1">
+                    <div className="p-3 rounded-lg bg-mist space-y-1">
                       <p className="font-semibold">Follow-up note (edit before sending)</p>
-                      <textarea value={notes[i.id] ?? i.followUpNote ?? note(s?.alias ?? '')} onChange={(e) => setNotes({ ...notes, [i.id]: e.target.value })} rows={4} className="w-full p-2 rounded-lg border-2 border-stone-700 bg-white" />
+                      <textarea value={notes[i.id] ?? i.followUpNote ?? note(s?.alias ?? '')} onChange={(e) => setNotes({ ...notes, [i.id]: e.target.value })} rows={4} className="w-full p-2 rounded-lg border-2 border-line-strong bg-white" />
                     </div>
                   )}
                 </>

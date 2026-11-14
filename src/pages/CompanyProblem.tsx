@@ -26,7 +26,7 @@ export default function CompanyProblem() {
   return (
     <div className="p-4 space-y-4">
       <Link to="/company" className="underline">Back</Link>
-      <h1 className="text-2xl font-bold">{p.title}</h1>
+      <h1 className="text-2xl font-extrabold text-brand">{p.title}</h1>
       <h2 className="text-xl font-bold">Blind submissions (random order)</h2>
       {order.length === 0 && <p>{copy.emptyStates.submissions}</p>}
       <ul className="space-y-3">
@@ -35,11 +35,11 @@ export default function CompanyProblem() {
           const ends = endorsements.filter((e) => e.submissionId === s.id)
           const sent = interests.some((i) => i.submissionId === s.id && i.companyId === companyId)
           return (
-            <li key={s.id} className="p-4 rounded-xl bg-white border-2 border-stone-300 space-y-2">
+            <li key={s.id} className="p-4 rounded-xl bg-white border-2 border-line space-y-2">
               <h3 className="font-bold text-lg">{s.alias}</h3>
               <p>{s.work}</p>
               <div className="flex flex-wrap gap-2">
-                {s.skills.map((k) => <span key={k} className="px-2 py-1 rounded bg-amber-100 text-sm">{k}</span>)}
+                {s.skills.map((k) => <span key={k} className="px-2 py-1 rounded bg-tint text-brand font-medium text-sm">{k}</span>)}
               </div>
               {ends.length > 0 && (
                 <ul className="text-sm space-y-1">
@@ -57,14 +57,14 @@ export default function CompanyProblem() {
       {thread.length === 0 && <p>{copy.emptyStates.asks}</p>}
       <ul className="space-y-2">
         {thread.map((a) => (
-          <li key={a.id} className={`p-3 rounded-lg ${a.from === 'company' ? 'bg-sky-100' : 'bg-stone-100'}`}>
+          <li key={a.id} className={`p-3 rounded-lg ${a.from === 'company' ? 'bg-tint' : 'bg-mist'}`}>
             <span className="font-semibold">{a.from === 'company' ? 'You' : 'A solver'}: </span>{a.text}
           </li>
         ))}
       </ul>
       <label className="block space-y-1"><span className="font-semibold">Reply</span>
-        <textarea value={reply} onChange={(e) => setReply(e.target.value)} rows={2} className="w-full p-2 rounded-lg border-2 border-stone-700 bg-white" /></label>
-      <button onClick={send} className="min-h-12 px-4 rounded-lg bg-stone-900 text-white font-semibold">Send reply</button>
+        <textarea value={reply} onChange={(e) => setReply(e.target.value)} rows={2} className="w-full p-2 rounded-lg border-2 border-line-strong bg-white" /></label>
+      <button onClick={send} className="min-h-12 px-4 rounded-lg bg-brand text-white font-semibold">Send reply</button>
     </div>
   )
 }
