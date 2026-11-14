@@ -60,7 +60,7 @@ export const submissions: Submission[] = [
       'Started from the timestamps, not the pallet IDs, and checked gaps under one minute. Found 9 pairs. Stated the assumption that scanner clocks drift less than 2 seconds.',
     skills: ['Attention to detail', 'Problem solving'],
     summary:
-      'A former touring musician who moved into QA testing. Notices the small things that do not match.',
+      'Careful with detail and good at spotting small mismatches. Explains assumptions clearly.',
     summaryIsAiDraft: false,
   },
   {

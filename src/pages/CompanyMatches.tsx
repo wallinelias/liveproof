@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../state/AppContext'
 import RevealedContact from '../components/RevealedContact'
@@ -7,6 +8,7 @@ const note = (alias: string) =>
 
 export default function CompanyMatches() {
   const { companyId, interests, setInterests, submissions, talent } = useApp()
+  const [notes, setNotes] = useState<Record<string, string>>({})
   const mine = interests.filter((i) => i.companyId === companyId)
   return (
     <div className="p-4 space-y-4">
@@ -28,7 +30,7 @@ export default function CompanyMatches() {
                   {i.contactViewed && (
                     <div className="p-3 rounded-lg bg-stone-100 space-y-1">
                       <p className="font-semibold">Follow-up note (edit before sending)</p>
-                      <textarea defaultValue={i.followUpNote ?? note(s?.alias ?? '')} rows={4} className="w-full p-2 rounded-lg border-2 border-stone-700 bg-white" />
+                      <textarea value={notes[i.id] ?? i.followUpNote ?? note(s?.alias ?? '')} onChange={(e) => setNotes({ ...notes, [i.id]: e.target.value })} rows={4} className="w-full p-2 rounded-lg border-2 border-stone-700 bg-white" />
                     </div>
                   )}
                 </>

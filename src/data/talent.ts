@@ -44,4 +44,11 @@ export const talent: Talent[] = [
     revealed: false,
     contact: 'kaspar.example@mail.example',
   },
+  {
+    id: 't-me',
+    firstName: 'Alex',
+    skills: ['Problem solving', 'Clear communication', 'Attention to detail'],
+    revealed: false,
+    contact: 'alex.example@mail.example',
+  },
 ]

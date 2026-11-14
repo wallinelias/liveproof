@@ -25,7 +25,10 @@ export default function Solve() {
 
   const submit = () => {
     const sid = `s-me-${submissions.length}`
-    const alias = `Solver ${String.fromCharCode(65 + Math.floor(Math.random() * 26))}${Math.floor(Math.random() * 90 + 10)}`
+    const used = new Set(submissions.map((x) => x.alias))
+    let alias = ''
+    do alias = `Solver ${String.fromCharCode(65 + Math.floor(Math.random() * 26))}${Math.floor(Math.random() * 90 + 10)}`
+    while (used.has(alias))
     const summary = `Worked on "${p.title}" and wrote up their steps in their own words. Shows ${p.skills.join(' and ').toLowerCase()}.`
     setSubmissions([...submissions, { id: sid, problemId: p.id, talentId: meId, alias, work, skills: p.skills, summary, summaryIsAiDraft: true }])
     nav(`/talent/submitted/${sid}`)
