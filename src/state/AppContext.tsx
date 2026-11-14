@@ -9,7 +9,7 @@ import { problems as seedProblems } from '../data/problems'
 
 type Set<T> = Dispatch<SetStateAction<T>>
 
-// In-memory only. Seed arrays are copied once; static data (events, companies, problems) is imported directly.
+// In-memory only. Seed arrays are used as initial state and never mutated (updates create new arrays); static data (events, companies, problems) is imported directly.
 interface AppState {
   role: Role; setRole: (r: Role) => void
   eventJoined: boolean; setEventJoined: (b: boolean) => void

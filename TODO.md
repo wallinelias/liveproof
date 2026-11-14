@@ -6,7 +6,7 @@ Reserve: keep at least 2.00 untouched.
 - [x] M2 builder: problem detail, ask thread, solve screen with timer, submit, AI-draft summary (est 3)
 - [x] M3 (reviewed, fixes applied) builder: company dashboard: post problem, blind random-order submissions, interested, reveal flow (est 3.5)
 - [x] M4 builder: pair mode (scripted partner), endorsements, showcase, interest inbox (est 2.5)
-- [ ] M5 builder + reviewer: polish, accessibility, mobile check, `npm run build`, reviewer pass (est 2)
+- [x] M5 builder + reviewer: polish, accessibility, mobile check, `npm run build`, reviewer pass (est 2)
 - [ ] M6 pitch-writer: SUBMISSION.md with all form text, video script, pitch, deck outline, Q&A prep (est 1.5)
 - [ ] USER tasks (morning): deploy to Vercel or GitHub Pages, record video, upload deck PDF, submit FINAL by 09:30
 

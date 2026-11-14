@@ -33,20 +33,22 @@ export default function App() {
   return (
     <div className="min-h-screen bg-amber-50 text-stone-900">
       <header className="sticky top-0 z-10 bg-white border-b-2 border-stone-900">
-        <div className="mx-auto max-w-3xl flex flex-wrap items-center gap-2 p-2">
-          <span className="font-bold mr-auto">LiveProof</span>
-          <button onClick={() => setShowResp(true)} className="min-h-11 px-3 rounded-lg font-medium underline">Responsible by design</button>
-          <button onClick={() => { resetDemo(); nav('/' + role) }} className="min-h-11 px-3 rounded-lg font-medium border-2 border-stone-900">Reset demo</button>
-          {roles.map((r) => (
-            <button
-              key={r.id}
-              onClick={() => { setRole(r.id); nav('/' + r.id) }}
-              aria-pressed={role === r.id}
-              className={`min-h-11 px-3 rounded-lg font-medium ${role === r.id ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}
-            >
-              {r.label}
-            </button>
-          ))}
+        <div className="mx-auto max-w-3xl flex flex-wrap items-center gap-x-2 gap-y-1 p-2">
+          <div className="flex gap-2 w-full sm:w-auto sm:order-2">
+            {roles.map((r) => (
+              <button
+                key={r.id}
+                onClick={() => { setRole(r.id); nav('/' + r.id) }}
+                aria-pressed={role === r.id}
+                className={`flex-1 min-h-11 px-3 rounded-lg font-medium ${role === r.id ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}
+              >
+                {r.label}
+              </button>
+            ))}
+          </div>
+          <span className="font-bold mr-auto sm:order-1">LiveProof</span>
+          <button onClick={() => setShowResp(true)} className="min-h-11 px-2 rounded-lg text-sm font-medium underline sm:order-3">Responsible by design</button>
+          <button onClick={() => { resetDemo(); nav('/' + role) }} className="min-h-11 px-3 rounded-lg text-sm font-medium border-2 border-stone-900 sm:order-4">Reset demo</button>
         </div>
         {role === 'talent' && eventJoined && loc.pathname.startsWith('/talent') && (
           <nav aria-label="Talent" className="mx-auto max-w-3xl flex gap-2 p-2 pt-0">
