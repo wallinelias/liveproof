@@ -1,11 +1,11 @@
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
+import { Navigate, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useApp } from './state/AppContext'
 import TalentJoin from './pages/TalentJoin'
 import ProblemBoard from './pages/ProblemBoard'
 import ProblemDetail from './pages/ProblemDetail'
 import Solve from './pages/Solve'
 import Submitted from './pages/Submitted'
-import ShowcaseStub from './pages/ShowcaseStub'
+import Showcase from './pages/Showcase'
 import CompanyHome from './pages/CompanyHome'
 import CompanyNew from './pages/CompanyNew'
 import CompanyProblem from './pages/CompanyProblem'
@@ -24,7 +24,11 @@ function Placeholder({ title }: { title: string }) {
 }
 
 export default function App() {
-  const { role, setRole } = useApp()
+  const { role, setRole, eventJoined, interests, submissions, meId } = useApp()
+  const loc = useLocation()
+  const myIds = submissions.filter((x) => x.talentId === meId).map((x) => x.id)
+  const unread = interests.some((i) => i.status === 'sent' && myIds.includes(i.submissionId))
+  const tabs = [{ to: '/talent/board', label: 'Board' }, { to: '/talent/showcase', label: 'My showcase' }, { to: '/talent/inbox', label: unread ? 'Inbox (new)' : 'Inbox' }]
   const nav = useNavigate()
   return (
     <div className="min-h-screen bg-amber-50 text-stone-900">
@@ -42,6 +46,15 @@ export default function App() {
             </button>
           ))}
         </div>
+        {role === 'talent' && eventJoined && loc.pathname.startsWith('/talent') && (
+          <nav aria-label="Talent" className="mx-auto max-w-3xl flex gap-2 p-2 pt-0">
+            {tabs.map((t) => (
+              <NavLink key={t.to} to={t.to} className={({ isActive }) => `flex-1 min-h-12 inline-flex items-center justify-center rounded-lg font-medium text-center ${isActive ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}>
+                {t.label}{t.label.includes('new') && <span className="ml-1 w-2 h-2 rounded-full bg-rose-600" aria-hidden="true" />}
+              </NavLink>
+            ))}
+          </nav>
+        )}
       </header>
       <main className="mx-auto max-w-3xl">
         <Routes>
@@ -51,7 +64,7 @@ export default function App() {
           <Route path="/talent/problem/:id" element={<ProblemDetail />} />
           <Route path="/talent/problem/:id/solve" element={<Solve />} />
           <Route path="/talent/submitted/:sid" element={<Submitted />} />
-          <Route path="/talent/showcase" element={<ShowcaseStub />} />
+          <Route path="/talent/showcase" element={<Showcase />} />
           <Route path="/talent/inbox" element={<TalentInbox />} />
           <Route path="/talent/*" element={<Navigate to="/talent" replace />} />
           <Route path="/company" element={<CompanyHome />} />
