@@ -12,7 +12,7 @@ Companies post real problems at recruiting events. Talent solves them live on th
 
 **Challenge:** City of Espoo - Rethinking Recruitment
 
-**Demo link:** [PLACEHOLDER]
+**Demo link:** https://liveproof-ten.vercel.app/
 **Source code link:** [PLACEHOLDER]
 **Phone number(s):** [PLACEHOLDER]
 **Discord username:** [PLACEHOLDER]
