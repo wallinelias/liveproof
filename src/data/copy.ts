@@ -3,6 +3,19 @@
 export const copy = {
   banner: 'Same time and tools for everyone',
 
+  boardIntro: 'Pick a real problem, do a short timed task, and show what you can do. Companies see your work, not your CV.',
+
+  responsible: {
+    title: 'Responsible by design',
+    bullets: [
+      'AI drafts only. A human always edits and decides.',
+      'No scoring and no ranking of people. Ever.',
+      'Submissions are shown in random order.',
+      'Blind until the talent chooses to reveal their name and contact.',
+      'All data is synthetic, and humans make every hiring decision.',
+    ],
+  },
+
   aiBadge: {
     allowed: 'AI allowed',
     notAllowed: 'No AI this round',

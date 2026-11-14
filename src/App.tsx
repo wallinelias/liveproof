@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import ResponsibleDialog from './components/ResponsibleDialog'
+import Organiser from './pages/Organiser'
 import { Navigate, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useApp } from './state/AppContext'
 import TalentJoin from './pages/TalentJoin'
@@ -19,12 +22,9 @@ const roles: { id: Role; label: string }[] = [
   { id: 'organiser', label: 'Organiser' },
 ]
 
-function Placeholder({ title }: { title: string }) {
-  return <p className="p-4 text-lg">{title} (placeholder)</p>
-}
-
 export default function App() {
-  const { role, setRole, eventJoined, interests, submissions, meId } = useApp()
+  const { role, setRole, eventJoined, interests, submissions, meId, resetDemo } = useApp()
+  const [showResp, setShowResp] = useState(false)
   const loc = useLocation()
   const myIds = submissions.filter((x) => x.talentId === meId).map((x) => x.id)
   const unread = interests.some((i) => i.status === 'sent' && myIds.includes(i.submissionId))
@@ -33,14 +33,16 @@ export default function App() {
   return (
     <div className="min-h-screen bg-amber-50 text-stone-900">
       <header className="sticky top-0 z-10 bg-white border-b-2 border-stone-900">
-        <div className="mx-auto max-w-3xl flex items-center gap-2 p-2">
+        <div className="mx-auto max-w-3xl flex flex-wrap items-center gap-2 p-2">
           <span className="font-bold mr-auto">LiveProof</span>
+          <button onClick={() => setShowResp(true)} className="min-h-11 px-3 rounded-lg font-medium underline">Responsible by design</button>
+          <button onClick={() => { resetDemo(); nav('/' + role) }} className="min-h-11 px-3 rounded-lg font-medium border-2 border-stone-900">Reset demo</button>
           {roles.map((r) => (
             <button
               key={r.id}
               onClick={() => { setRole(r.id); nav('/' + r.id) }}
               aria-pressed={role === r.id}
-              className={`min-h-12 px-3 rounded-lg font-medium ${role === r.id ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}
+              className={`min-h-11 px-3 rounded-lg font-medium ${role === r.id ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}
             >
               {r.label}
             </button>
@@ -72,9 +74,10 @@ export default function App() {
           <Route path="/company/problem/:id" element={<CompanyProblem />} />
           <Route path="/company/matches" element={<CompanyMatches />} />
           <Route path="/company/*" element={<Navigate to="/company" replace />} />
-          <Route path="/organiser" element={<Placeholder title="Organiser" />} />
+          <Route path="/organiser" element={<Organiser />} />
         </Routes>
       </main>
+      {showResp && <ResponsibleDialog onClose={() => setShowResp(false)} />}
     </div>
   )
 }

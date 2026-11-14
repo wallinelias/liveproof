@@ -11,6 +11,7 @@ export default function ProblemBoard() {
   return (
     <div className="p-4 space-y-4">
       <h1 className="text-2xl font-bold">Problem board</h1>
+      <p>{copy.boardIntro}</p>
       <p className="p-3 rounded-lg bg-emerald-100 border border-emerald-800 font-semibold">{copy.banner}</p>
       {problems.length === 0 && <p>{copy.emptyStates.board}</p>}
       <ul className="space-y-3">

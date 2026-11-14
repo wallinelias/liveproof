@@ -21,6 +21,7 @@ interface AppState {
   talent: Talent[]; setTalent: Set<Talent[]>
   problems: Problem[]; setProblems: Set<Problem[]>
   companyId: string; setCompanyId: (id: string) => void   // current demo company
+  resetDemo: () => void
 }
 
 const Ctx = createContext<AppState | null>(null)
@@ -36,8 +37,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [talent, setTalent] = useState(seedTalent)
   const [problems, setProblems] = useState<Problem[]>(seedProblems)
   const [companyId, setCompanyId] = useState('c-blorvik')
+  const resetDemo = () => {
+    setEventJoined(false); setMeId('t-me'); setSubmissions(seedSubmissions); setAsks(seedAsk)
+    setEndorsements(seedEnd); setInterests(seedInterests); setTalent(seedTalent)
+    setProblems(seedProblems); setCompanyId('c-blorvik')
+  }
   return (
-    <Ctx.Provider value={{ role, setRole, eventJoined, setEventJoined, meId, setMeId, submissions, setSubmissions, asks, setAsks, endorsements, setEndorsements, interests, setInterests, talent, setTalent, problems, setProblems, companyId, setCompanyId }}>
+    <Ctx.Provider value={{ resetDemo,  role, setRole, eventJoined, setEventJoined, meId, setMeId, submissions, setSubmissions, asks, setAsks, endorsements, setEndorsements, interests, setInterests, talent, setTalent, problems, setProblems, companyId, setCompanyId }}>
       {children}
     </Ctx.Provider>
   )
