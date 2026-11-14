@@ -51,7 +51,7 @@ At a recruiting event, companies post short, real problems from the actual job. 
 Aggregate counts only: problems, submissions, introductions made. Never anything per person.
 
 ## Social layer
-Collaboration is optional and never required. Pair rounds let people solve together, and partners can give skill-tagged endorsements ("good at debugging"). Companies see endorsements, never raw chat. The solo path is always fully equal, so introverts and extroverts are on the same footing.
+Collaboration is optional. Pair partners can give skill-tagged endorsements ("good at debugging"); companies see endorsements, never raw chat. The solo path is fully equal.
 
 ## Responsible by design (EU AI Act and privacy)
 - **AI assists, never decides.** There is no score, rank, filter or "match %" for people anywhere. The types contain no score field, so it cannot appear by accident.
@@ -61,7 +61,7 @@ Collaboration is optional and never required. Pair rounds let people solve toget
 - **Bias avoidance.** Blind review. Random order of submissions (one shuffle helper, no sort by any field). Equal time and tools, declared on every problem. Skills and work are shown, not nationality, language polish, school or career path.
 
 ## Synthetic data
-Every name, company, problem and submission is fictional and obviously fake. No real personal data is used or stored. State lives in memory and resets on reload.
+Every name, company, problem and submission is fictional. No real personal data is used or stored.
 
 ## Feasibility
 LiveProof is a static web app: nearly free to host, no installs, works on any phone browser. An organiser needs only an event code, a few company problems and an aggregate stats screen. In production, a small backend would store submissions with event-scoped retention and deletion, and a serverless function could call a small language model for the two drafting aids (key kept server-side). Companies post a problem via a link before the event; talent join by event code, no account.
@@ -69,25 +69,13 @@ LiveProof is a static web app: nearly free to host, no installs, works on any ph
 ## What is real and what is simulated in this demo
 Real: the full flow, timers, blind random-order review, the reveal and mutual-interest logic, aggregate stats.
 Simulated: the AI drafts (problem text and skills summary) are **pre-generated strings**, not live model calls. Company answers in the ask-thread and the pair partner are scripted. There is no backend, so the roles share one in-memory state in one browser.
+
+The 4-second opening shot of the demo video is AI-generated (Higgsfield), abstract, with no real people.
 ---
 
-## 2. Two-minute video script (target 110 s, hard limit 2:00)
+## 2. Two-minute video (hard limit 2:00, target 1:50)
 
-Spoken pace about 150 wpm. Keep it under 270 words.
-
-| Time | Screen cue | Voiceover |
-|---|---|---|
-| 0:00-0:12 | Title card, then phone showing the problem board | "CVs are written by AI now, and so is a lot of screening. Recruiting events need a better signal. LiveProof turns the event into a live work sample." |
-| 0:12-0:27 | Talent: join with code ESPOO-TALENT-NIGHT, board. Zoom on AI badge and solo/pair badge | "Talent join with an event code and see real problems from real companies. Each one declares its time box, whether AI is allowed, and solo or pair. Same rules for everyone." |
-| 0:27-0:40 | Open problem, ask a question, answer appears | "Unclear? Ask the company. Answers are human." |
-| 0:40-0:58 | Solve screen, timer, pre-filled work, submit, AI draft summary, edit, showcase | "Solve on your phone against a timer. Afterwards an AI draft summarises your skills. It is labelled, you edit it, and you own it. It goes to your showcase." |
-| 0:58-1:10 | Pair round, endorsement | "Prefer teamwork? Pair up. Partners can endorse a specific skill. Solo stays fully equal." |
-| 1:10-1:32 | Switch to Company: paste vague need, Help me write it, edit draft, publish; open blind submissions, point at Solver A7, tap interested | "Companies paste a vague need and get an AI draft they edit. Then they review the work, not the CV. Anonymous solver names, random order, no scores, no ranking. When they see something good, a human taps interested." |
-| 1:32-1:45 | Switch to Talent: inbox, Reveal, contact card | "The talent sees the interest and chooses whether to reveal their name. One tap, their call. Then both sides get a follow-up note." |
-| 1:45-1:55 | Organiser stats, Responsible by design panel | "Organisers see only counts. AI drafts only, humans decide, all data synthetic. The AI drafts in this demo are pre-generated." |
-| 1:55-2:00 | Pitch line on screen | "Hackathons show who people really are. LiveProof brings that into every recruiting event." |
-
-Tip: record at 1.0x, then trim. If over 1:55, cut the ask-question beat first.
+The full script, shot table, Higgsfield prompt, filming guide, CapCut steps and checklist are in `VIDEO_PLAN.md`.
 
 ## 3. 60-second spoken pitch (about 150 words)
 
