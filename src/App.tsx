@@ -1,5 +1,8 @@
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { useApp } from './state/AppContext'
+import TalentJoin from './pages/TalentJoin'
+import ProblemBoard from './pages/ProblemBoard'
+import ProblemStub from './pages/ProblemStub'
 import type { Role } from './types'
 
 const roles: { id: Role; label: string }[] = [
@@ -17,7 +20,7 @@ export default function App() {
   const nav = useNavigate()
   return (
     <div className="min-h-screen bg-amber-50 text-stone-900">
-      <header className="sticky top-0 bg-white border-b border-stone-300">
+      <header className="sticky top-0 z-10 bg-white border-b-2 border-stone-900">
         <div className="mx-auto max-w-3xl flex items-center gap-2 p-2">
           <span className="font-bold mr-auto">LiveProof</span>
           {roles.map((r) => (
@@ -25,7 +28,7 @@ export default function App() {
               key={r.id}
               onClick={() => { setRole(r.id); nav('/' + r.id) }}
               aria-pressed={role === r.id}
-              className={`min-h-11 px-3 rounded-lg font-medium ${role === r.id ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}
+              className={`min-h-12 px-3 rounded-lg font-medium ${role === r.id ? 'bg-stone-900 text-white' : 'bg-stone-100'}`}
             >
               {r.label}
             </button>
@@ -35,7 +38,10 @@ export default function App() {
       <main className="mx-auto max-w-3xl">
         <Routes>
           <Route path="/" element={<Navigate to="/talent" replace />} />
-          <Route path="/talent/*" element={<Placeholder title="Talent" />} />
+          <Route path="/talent" element={<TalentJoin />} />
+          <Route path="/talent/board" element={<ProblemBoard />} />
+          <Route path="/talent/problem/:id" element={<ProblemStub />} />
+          <Route path="/talent/*" element={<Navigate to="/talent" replace />} />
           <Route path="/company/*" element={<Placeholder title="Company" />} />
           <Route path="/organiser" element={<Placeholder title="Organiser" />} />
         </Routes>
