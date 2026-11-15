@@ -1,48 +1,56 @@
-# LiveProof video plan (hard limit 2:00, target 1:50)
+# LiveProof video plan (hard limit 2:00, target about 1:48)
 
-Format: you on camera (walk and talk with a phone) + real phone screen-recording demo with zoom-ins + ONE 4-second AI opener from Higgsfield. Edit in CapCut desktop (Mac).
+Decisions
+- 16:9 horizontal, 1080p, 30 fps.
+- You speak live on camera (walk and talk, filmed in landscape) for face shots.
+- Demo screens get voiceover recorded afterwards in CapCut.
+- Auto-captions only. No extra key-moment captions. The only other text is the end card.
+- Music: calm, modern, hopeful, at 8-12%.
+- Visuals: real phone screen recordings, plus optional still screenshots as 1-second zoom inserts.
+- Vertical phone recordings are placed centred on a #1F4DB5 background in the 16:9 timeline.
+- Higgsfield AI opener is a 3-second abstract cold open, disclosed in the form description (which stays as is).
+- Cut: pair round and organiser stats. Optional 4 s organiser insert only if total is under 1:45.
 
-## 1. Story arc and shot table
+## 1. Timeline
 
-Spoken words total about 240. At a calm pace that is about 100 s, plus pauses and the opener, so about 1:50.
+| # | Time | What we see | Spoken |
+|---|---|---|---|
+| 1 | 0:00-0:03 | Higgsfield opener, cut to exactly 3 s. Hard cut or 0.3 s dissolve to face. | none (music only) |
+| 2 | 0:03-0:27 | Face, walking (filmed shot 1) | "Your CV was written by AI. So was the screening. At recruiting events, companies get piles of polished CVs that all sound the same, and talent get two minutes at a booth to prove themselves. So I built LiveProof: companies post a real problem from the job, talent solve it live on their phone, and companies review the work, not the CV." |
+| 3 | 0:27-0:50 | Demo A, talent: landing, Start as Talent, join with ESPOO-TALENT-NIGHT, board (150% zoom on AI-allowed badge), solve with timer, own note labelled "Written by the talent" | Voiceover: "Talent join with an event code and see real problems. Every card says if AI is allowed, and if it's solo or pair. Same rules for everyone. They solve against a timer, then write a short note in their own words." |
+| 4 | 0:50-0:55 | Face (filmed shot 2) | "That's the talent side. Now, what does the company see?" |
+| 5 | 0:55-1:20 | Demo B, company: Help me write it, blind cards (150% zoom on Solver A7), I'm interested, then talent inbox: Reveal (zoom) and contact card | Voiceover: "Companies can turn a vague need into a clear problem with an AI draft they edit. Then they see anonymous solvers, in random order, with no scores. A human taps I'm interested. And the talent decides whether to reveal their name." |
+| 6 | 1:20-1:45 | Face (filmed shot 3), then cut to end card for the last line | "AI helps companies describe problems. It never describes, scores or judges people. Humans decide every step, which keeps us clear of high-risk screening under the EU AI Act. All data is synthetic, and the AI problem draft in this demo is pre-generated. Hackathons show who people really are. LiveProof brings that into every recruiting event. Try it at liveproof-ten dot vercel dot app." |
+| 7 | 1:45-1:48 | End card hold: blue #1F4DB5, white text "LiveProof" and https://liveproof-ten.vercel.app/ | none (music fades out) |
 
-| # | Time | What we see | Spoken line | On-screen caption | Zoom / transition |
-|---|---|---|---|---|---|
-| 1 | 0:00-0:04 | AI opener (Higgsfield): CV page dissolving into glowing lines | "Your CV was written by AI. So was the screening." | Your CV was written by AI. So was the screening. | Hard cut in. Quick cross-dissolve to face. |
-| 2 | 0:04-0:16 | Face, walking | "At recruiting events, companies get piles of polished CVs that all sound the same. Talent get two minutes at a booth to prove themselves." | Same CVs. Two minutes. No proof. | Slow 105% push-in. |
-| 3 | 0:16-0:26 | Face | "So I built LiveProof. Companies post a real problem from the job. Talent solve it live on their phone. Companies review the work, not the CV." | LiveProof: work, not CVs | Cut to demo on "live on their phone". |
-| 4 | 0:26-0:38 | Demo: landing, "Start as Talent", join with ESPOO-TALENT-NIGHT, problem board | "Talent join with an event code and see real problems. Every card says if AI is allowed, and if it is solo or pair. Same rules for everyone." | Event code: ESPOO-TALENT-NIGHT | Zoom 150% on the "AI allowed" badge, then back out. |
-| 5 | 0:38-0:52 | Demo: open a problem, Start solving (timer, banner "Same time and tools for everyone"), submit, talent types their own short note using a sentence starter, Go to my showcase | "Solve against a timer. Then write a short note in your own words. Companies see it labelled: written by the talent." | Your words. Written by the talent. | Zoom 150% on the timer, then on the note and its "Written by the talent" label. |
-| 6 | 0:52-0:58 | Demo: pair round, skill endorsement (fast, 6 s) | "Pair up if you like, and a partner can endorse a skill. Solo stays fully equal." | Pairs optional. Solo fully equal. | Speed up clip 1.5x if needed. |
-| 7 | 0:58-1:16 | Demo: Switch to Company, "Help me write it" draft, blind submission cards (Solver A7), tap "I'm interested" | "Companies can turn a vague need into a clear problem with an AI draft they edit. Then they see anonymous solvers, in random order, with no scores. When they spot something good, a human taps I'm interested." | Blind. Random order. No scores. | Zoom 150% on "Solver A7", then on the "I'm interested" button. |
-| 8 | 1:16-1:30 | Demo: Talent inbox, Reveal, contact card, then Organiser stats | "The talent decides whether to reveal their name. Then both sides get a contact card. Organisers see only counts." | Talent chooses when to reveal | Zoom 150% on Reveal button. Cut to stats. |
-| 9 | 1:30-1:41 | Face (or demo "Responsible by design" panel as B-roll under your voice) | "AI helps companies describe problems. It never describes, scores or judges people. Humans decide every step, which keeps us clear of high-risk screening under the EU AI Act. All data is synthetic, and the AI problem draft in this demo is pre-generated." | AI describes problems, never people. Humans decide. Problem draft pre-generated in demo. | Cut to face for "Humans decide". |
-| 10 | 1:41-1:50 | Face, then title card (blue #1F4DB5 background) with link | "Hackathons show who people really are. LiveProof brings that into every recruiting event. Try it at liveproof-ten dot vercel dot app." | LiveProof - https://liveproof-ten.vercel.app/ | Fade to title card on "Try it". Hold link 3 s, fade out. |
+Total about 1:48. Hard limit 2:00.
 
-Honesty line (shot 9) is mandatory. Also disclose the AI opener in the form description (already added to SUBMISSION.md).
+Honesty line (step 6: "the AI problem draft in this demo is pre-generated") is mandatory. The AI opener is disclosed in the form description (already in SUBMISSION.md).
 
-## 2. Higgsfield opener (4 seconds)
+Zoom inserts: 150% zoom on the AI-allowed badge (step 3), on Solver A7 (step 5), and on the Reveal button (step 5). Optional 1-second still screenshots can be used as extra zoom inserts, only if they do not push the total past 1:48.
 
-Paste this prompt, set duration 4 s, 16:9 (or 9:16 if your video is vertical, match the rest):
+## 2. Higgsfield opener (3 seconds)
+
+Paste this prompt, set duration to the shortest option (about 3-5 s) in 16:9, and cut to exactly 3 s in CapCut:
 
 > Cinematic macro shot of a single blank white paper CV page floating in a dark navy void. The page slowly dissolves from its edges into thousands of glowing lines and tiny code-like particles that stream upward. Colour palette: deep blue #1F4DB5 and bright sky blue #5BA4F5, soft light bloom, shallow depth of field, slow dolly-in, smooth motion. Abstract only. No people, no faces, no hands, no text, no letters, no logos.
 
-Fallback if the result is poor (garbled text, faces, jerky): simplify to
+Fallback if the result is poor (garbled text, faces, jerky):
 
 > Abstract slow-motion glowing blue lines and particles flowing and converging on a dark navy background, #1F4DB5 and #5BA4F5, cinematic, smooth, no people, no text.
 
-If still poor, generate 2-3 variants and pick the cleanest. Last resort: skip Higgsfield and use shot 2 face as the opener (then remove the AI-opener sentence from the description).
+If still poor, generate 2-3 variants and pick the cleanest. Last resort: skip Higgsfield and start on step 2 (then remove the AI-opener sentence from the description, and the total drops to about 1:45).
 
 ## 3. Filming guide
 
 Phone settings
-- Rear camera (better quality), 1080p 30 fps, landscape if your demo is shown full-width, otherwise vertical for everything. Pick one orientation and keep it.
+- Rear camera (better quality), 1080p 30 fps, landscape for face shots. Screen recordings stay vertical (they go on a blue background, see CapCut).
 - Airplane mode plus Do Not Disturb so no calls or banners. Clean the lens with your shirt.
 - Lock exposure: tap and hold on your face until "AE/AF lock" appears.
 
 Where to stand and light
 - Face a window, so the light is on your face and not behind you. Avoid overhead lights and backlight.
-- Hold the phone at eye level, arm slightly bent, or lean it on a stack of books and walk a few steps. Walk slowly. Stop for key words.
+- Hold the phone at eye level, arm slightly bent, or lean it on a stack of books and walk a few steps. Walk slowly. Stop for key words. Keep your face centred in the landscape frame.
 - Plain, quiet background.
 
 Audio
@@ -50,39 +58,45 @@ Audio
 - Do a 10-second test, play it back, then go.
 
 Takes
-- Max 3 takes per section. Record each face shot (2, 3, 9, 10) separately, 1-2 sentences at a time. Pause 1 s before and after speaking so cuts are easy. Pick the best take, move on.
+- 3 face shots only (timeline steps 2, 4, 6), max 3 takes each. Speak the lines live to camera. Pause 1 s before and after speaking so cuts are easy. Pick the best take, move on.
+- Step 2 and step 6 are long. Record them in 1-2 sentence pieces if needed, within the 3-take limit.
 
 Screen recording the demo
 - First open https://liveproof-ten.vercel.app/ and press Reset demo, so state is clean. Keep the Demo guide strip on and follow its hints in order.
-- iPhone: Settings > Control Centre > add Screen Recording. Swipe down from the top right, tap the record button, wait for the 3-2-1, then swipe away. Mic off for demo clips (you add voiceover later or speak live).
+- iPhone: Settings > Control Centre > add Screen Recording. Swipe down from the top right, tap the record button, wait for the 3-2-1, then swipe away. Mic off (voiceover is added later in CapCut).
 - Android: swipe down twice, tap Screen record, choose no audio.
-- Record slowly. Pause 1 s on each screen. Tap deliberately. Do the flow in one go: landing, Start as Talent, join, board, problem, solve, submit, type own note, showcase, pair, Switch to Company, I'm interested, Open Talent inbox, Reveal, organiser.
-- Role switching: use the top bar and the guide buttons ("Switch to Company", "Open Talent inbox", "See organiser view"). If a take goes wrong, Reset demo and redo.
+- Record slowly. Pause 1 s on each screen. Tap deliberately. Record in two clips:
+  - Demo A (talent): landing, Start as Talent, join with ESPOO-TALENT-NIGHT, board, open a problem, Start solving (timer), submit, type own note, see "Written by the talent".
+  - Demo B (company): Switch to Company, Help me write it, blind cards (Solver A7), I'm interested, Open Talent inbox, Reveal, contact card.
+- Skip the pair round and the organiser view (cut). Optionally record the organiser stats for a 4 s insert.
+- Role switching: use the top bar and the guide buttons ("Switch to Company", "Open Talent inbox"). If a take goes wrong, Reset demo and redo.
+- Optional: take a few still screenshots (AI-allowed badge, Solver A7, Reveal) for 1-second zoom inserts.
 - Send files to the Mac with AirDrop.
 
 ## 4. CapCut desktop (12 steps)
 
-1. New project, set ratio to match your footage (16:9 or 9:16), 1080p, 30 fps.
-2. Import all clips (opener, face takes, screen recordings) and drag them into the media panel.
-3. Drop the opener first on the main timeline, then the face and demo clips in the order of the shot table.
+1. New project, ratio 16:9, 1080p, 30 fps.
+2. Import all clips (opener, 3 face takes, 2 screen recordings, optional stills) into the media panel.
+3. Drop the opener first on the main timeline (trim to exactly 3 s), then the clips in the order of the timeline table.
 4. Trim: press `B` to split at the playhead and `Delete` to remove pauses, mistakes and "ums".
-5. Record or place the voiceover if you did not speak live (Record button in the timeline), and align to shot timings.
-6. Zoom keyframes: select the screen clip, move to the start of the zoom, click the diamond (Keyframe) in the Video > Basic panel next to Scale, set 100%. Move 0.5 s later, set 150% and position onto the badge or button. Add a closing keyframe back to 100%.
-7. Transitions: add short Dissolve (0.3 s) only between opener to face and face to title card. Use hard cuts elsewhere.
-8. Captions: Text > Auto captions > English. Fix wrong words by hand, especially "LiveProof", "ESPOO-TALENT-NIGHT" and "EU AI Act". Use a large, high-contrast font.
-9. Add the on-screen captions and the end title card (blue background, white text, link) from the table. Hold the link 3 s.
-10. Music: Audio > Music, pick a calm instrumental from the free library, drag under everything, set volume to about 8-12% (voice at 0 dB). Fade out at the end.
-11. Check duration at the timeline end: must be under 2:00 (target 1:50). If long, cut shot 6 first, then shorten shot 2.
-12. Export: 1080p, 30 fps, MP4, H.264. In the export panel, make sure no end-card or watermark clip is added. If CapCut adds a trailing logo clip on the timeline, select it and delete it before exporting (the clip also counts toward the 2:00 limit).
+5. Vertical screen recordings: add a #1F4DB5 solid background (Media > Library > colour, or a blue background layer on the track below), then scale the recording to fit height and centre it. Zoom keyframes below apply to the recording layer.
+6. Voiceover for demos A and B: use the Record button in the timeline, with the demo clip muted, and speak the voiceover lines from the table while watching the clip. Align to the clip timings (A about 23 s, B about 25 s). Re-record if it runs long.
+7. Zoom keyframes: select the screen clip, move to the start of the zoom, click the diamond (Keyframe) in the Video > Basic panel next to Scale, set 100%. Move 0.5 s later, set 150% and position onto the badge, Solver A7 or Reveal button. Add a closing keyframe back to 100%.
+8. Transitions: Dissolve (0.3 s) optional between opener and face. Hard cuts elsewhere.
+9. Captions: Text > Auto captions > English. This is the only caption track. Fix wrong words by hand, especially "LiveProof", "ESPOO-TALENT-NIGHT" and "EU AI Act". Large, high-contrast font, kept clear of the phone recording.
+10. End card (the only other text): blue #1F4DB5 background, white text "LiveProof" and https://liveproof-ten.vercel.app/. Hold 3 s. Do not add key-moment captions anywhere else.
+11. Music: Audio > Music, pick a calm, modern, hopeful instrumental from the free library, drag under everything, set volume to about 8-12% (voice at 0 dB). Fade out on the end card.
+12. Check duration: must be under 2:00 (target about 1:48). If long, shorten the face shot in step 2, or drop optional inserts. Export 1080p, 30 fps, MP4, H.264. Make sure no CapCut end-card or watermark clip is added. If a trailing logo clip appears on the timeline, delete it first (it counts toward the 2:00 limit).
 
 ## 5. Final checklist
 
 - [ ] Total length under 2:00 (check the exported file, not just the timeline)
-- [ ] Captions on and spelling checked
-- [ ] Link https://liveproof-ten.vercel.app/ visible at the end for 3+ seconds
-- [ ] Opener is abstract, no people or lookalikes, and disclosed as AI-generated in the form description
+- [ ] 16:9 horizontal, vertical recordings centred on #1F4DB5
+- [ ] Opener is exactly 3 s, abstract, no people or lookalikes, and disclosed as AI-generated in the form description
+- [ ] Auto-captions on and spelling checked. No other captions. Only the end card has extra text.
+- [ ] Link https://liveproof-ten.vercel.app/ visible on the end card for 3 s
 - [ ] "AI problem draft is pre-generated" said in the video, plus "AI never describes, scores or judges people"
-- [ ] Voice clear, music low, no clipping
+- [ ] Voice clear, voiceover matches the screen, music at 8-12%, no clipping
 - [ ] No real personal data visible on screen (notifications, contacts)
 - [ ] Uploaded to YouTube as Unlisted (or equivalent), link opens in a private window
 - [ ] Link pasted into the Junction form Video field, status set to FINAL before Sun 10:00
